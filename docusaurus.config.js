@@ -12,7 +12,7 @@ const config = {
   
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
@@ -43,6 +43,8 @@ const config = {
       copyright: `Copyright © ${new Date().getFullYear()} Dev Rules`,
     },
   },
+
+  favicon: 'src/img/icon.png',
 };
 
 module.exports = config; 
