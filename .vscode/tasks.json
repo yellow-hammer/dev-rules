@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Запустить Docusaurus",
+        "type": "shell",
+        "command": "npm start",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Собрать Docusaurus",
+        "type": "shell",
+        "command": "npm run build",
+        "group": "build",
+        "problemMatcher": []
+      },
+      {
+        "label": "Установить зависимости",
+        "type": "shell",
+        "command": "npm install",
+        "group": "build",
+        "problemMatcher": []
+      },
+      {
+        "label": "Очистить кэш Docusaurus",
+        "type": "shell",
+        "command": "npm run clear",
+        "group": "build",
+        "problemMatcher": []
+      }
+    ]
+  }
