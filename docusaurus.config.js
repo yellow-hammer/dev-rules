@@ -1,10 +1,26 @@
+// @ts-check
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
+
 const config = {
-  title: 'Dev Rules',
-  tagline: 'Документация проекта',
+  title: 'Соглашение о разработке',
+  tagline: 'Набор практик и стандартов для качественной разработки в 1С',
+  favicon: 'src/img/icon.ico',
+  
+  // Set the production url of your site here
   url: 'https://yellow-hammer.github.io',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/dev-rules/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'yellow-hammer',
   projectName: 'dev-rules',
+  deploymentBranch: 'gh-pages',
+
   trailingSlash: false,
   
   onBrokenLinks: 'throw',
@@ -15,8 +31,8 @@ const config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
         },
         blog: false,
         theme: {
@@ -28,7 +44,7 @@ const config = {
 
   themeConfig: {
     navbar: {
-      title: 'Dev Rules',
+      title: 'Соглашение о разработке',
       items: [
         {
           type: 'doc',
@@ -40,11 +56,10 @@ const config = {
     },
     footer: {
       style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} Dev Rules`,
+      copyright: `Copyright © ${new Date().getFullYear()} Yellow Hammer`,
     },
   },
 
-  favicon: 'src/img/icon.png',
 };
 
 module.exports = config; 
