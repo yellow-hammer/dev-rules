@@ -52,6 +52,10 @@ const config = {
           position: 'left',
           label: 'Начало',
         },
+        {
+          type: 'search',
+          position: 'right', 
+        }
       ],
     },
     footer: {
