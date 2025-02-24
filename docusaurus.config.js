@@ -50,12 +50,27 @@ const config = {
           type: 'doc',
           docId: 'intro',
           position: 'left',
-          label: 'Документация',
+          label: 'Начало',
         },
       ],
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'Ссылки',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/yellow-hammer',
+            },
+            {
+              label: 'Telegram',
+              href: 'https://t.me/YellowHummer',
+            },
+          ],
+        }
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} Yellow Hammer`,
     },
   },
