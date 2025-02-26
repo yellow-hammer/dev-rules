@@ -20,11 +20,11 @@ title: Расширения
 
 Примеры:
 
-- [Документация HTTP сервисов в 1С при помощи swagger](https://github.com/zerobig/swagger-1c)
-- [Расширение для БСП для хранения файлов на s3 (minio, Amazon S3, Mail.Ru Cloud и т.п.)](https://github.com/BlizD/S3_SSL)
-- [БИТАдаптер](https://bit-erp.ru/adapter)
+   - [Документация HTTP сервисов в 1С при помощи swagger](https://github.com/zerobig/swagger-1c)
+   - [Расширение для БСП для хранения файлов на s3 (minio, Amazon S3, Mail.Ru Cloud и т.п.)](https://github.com/BlizD/S3_SSL)
+   - [БИТАдаптер](https://bit-erp.ru/adapter)
 
-3. Доработка типовых конфигураций
+1. Доработка типовых конфигураций
 
     Доработки типовых конфигураций, которые невозможно реализовать в рамках типовой конфигурации.
 
