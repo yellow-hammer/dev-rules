@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 18
 sidebar_label: Система управления версиями
 title: Система управления версиями
 ---
