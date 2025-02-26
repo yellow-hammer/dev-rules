@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 17
 sidebar_label: Обновление конфигураций
 title: Обновление конфигураций
 ---
