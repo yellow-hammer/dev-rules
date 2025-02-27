@@ -4,7 +4,7 @@ sidebar_label: Запросы
 title: Запросы
 ---
 
-## Стандарты 1С
+## Общие сведения
 
 При разработке запросов нужно следовать стандартам 1С:
 
@@ -53,4 +53,4 @@ title: Запросы
 
 Не забывать про [особенность](https://infostart.ru/1c/articles/2210327/), что порядок не гарантируется с единицы:
 
-![](https://infostart.ru/upload/iblock/e43/e43425921c97bf0149de6d6da70c470f.png)
+![1](https://infostart.ru/upload/iblock/e43/e43425921c97bf0149de6d6da70c470f.png)
