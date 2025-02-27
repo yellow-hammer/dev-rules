@@ -22,6 +22,8 @@ title: Роли
    УправлениеДоступом.ЕстьРоль("ИмяРоли");
    ```
 
+7. Запрет использования команд "установить все / снять все" в редакторе роли [Статья: Как правильно настроить RLS](https://infostart.ru/1c/articles/991247/)
+
 ## RLS
 
 Из роли **ИзменениеУчастниковГруппДоступа** копируем необходимые шаблоны (ПоЗначениям, ПоЗначениямРасширенный), в зависимости от объекта назначения, в новые роли.
@@ -37,6 +39,6 @@ title: Роли
 
 ### Копирование ограничений
 
-![](https://forum.infostart.ru/upload/forum/upload/520/52056d5b48eaff13c0f6e7810b381538.jpg)
-![](https://forum.infostart.ru/upload/forum/upload/4df/4df45aac72a08dca218bdee0896c49d9.jpg)
-![](https://forum.infostart.ru/upload/forum/upload/3fd/3fde3a6470040d2cabc2c4dac12989aa.jpg)
+![1](https://forum.infostart.ru/upload/forum/upload/520/52056d5b48eaff13c0f6e7810b381538.jpg)
+![2](https://forum.infostart.ru/upload/forum/upload/4df/4df45aac72a08dca218bdee0896c49d9.jpg)
+![3](https://forum.infostart.ru/upload/forum/upload/3fd/3fde3a6470040d2cabc2c4dac12989aa.jpg)
