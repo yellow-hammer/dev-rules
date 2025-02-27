@@ -1,0 +1,16 @@
+{
+    "spellright.language": [
+        "en",
+        "ru"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ],
+    "spellright.parserByClass": {
+        "bsl": {
+            "parser": "plain"
+        }
+    }
+}
