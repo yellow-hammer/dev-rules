@@ -4,4 +4,6 @@ sidebar_label: SonarQube
 title: SonarQube
 ---
 
+## Общие сведения
+
 TODO
