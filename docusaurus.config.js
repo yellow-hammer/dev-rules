@@ -7,7 +7,7 @@
 const config = {
   title: 'Соглашение о разработке',
   tagline: 'Набор практик и стандартов для качественной разработки в 1С',
-  favicon: 'src/img/icon.ico',
+  favicon: 'img/icon.ico',
   
   // Set the production url of your site here
   url: 'https://yellow-hammer.github.io',
@@ -78,6 +78,17 @@ const config = {
       copyright: `Copyright © ${new Date().getFullYear()} Yellow Hammer`,
     },
   },
+
+  plugins: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ["ru"],
+        docsRouteBasePath: '/',
+      }
+    ],
+  ],
 
 };
 
