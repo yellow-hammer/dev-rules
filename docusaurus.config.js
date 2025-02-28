@@ -33,6 +33,9 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/yellow-hammer/dev-rules/edit/main/',
+          editLocalizedFiles: true,
+          editCurrentVersion: true,
         },
         blog: false,
         theme: {
@@ -55,6 +58,11 @@ const config = {
         {
           type: 'search',
           position: 'right', 
+        },
+        {
+          href: 'https://github.com/yellow-hammer/dev-rules',
+          label: 'GitHub',
+          position: 'right',
         }
       ],
     },
@@ -76,6 +84,15 @@ const config = {
         }
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Yellow Hammer`,
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
+    feedback: {
+      content: 'Нашли ошибку? Создайте issue!',
+      feedbackLink: 'https://github.com/yellow-hammer/dev-rules/issues/new',
     },
   },
 

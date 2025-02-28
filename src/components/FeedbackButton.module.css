@@ -1,0 +1,34 @@
+.feedbackContainer {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.feedbackButton {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feedbackForm {
+  position: absolute;
+  z-index: 10;
+  bottom: 100%;
+  right: 0;
+  background: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.feedbackForm textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.feedbackForm button {
+  margin-right: 8px;
+}
