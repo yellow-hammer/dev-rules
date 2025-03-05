@@ -2,12 +2,25 @@
 
 Все заметные изменения в этом проекте будут задокументированы в этом файле.
 
-## [0.2.0] - 2025-03-03
+## [unreleased]
+
+### 📚 Documentation
+
+- Add recommendation for module tab configuration
+- Update code commenting guidelines
+
+### ⚙️ Miscellaneous Tasks
+
+- *(spell-checking)* Update spell-checking dictionary
+- *(vscode)* Add npm audit task to VSCode tasks configuration
+- *(git-cliff)* Generate CHANGELOG.md with git-cliff
+
+## [0.2.0] - 2025-03-05
 
 ### 🚀 Features
 
-- Add GitHub integration and feedback mechanism
-- Add local search functionality to documentation site
+- *(docusaurus)* Add GitHub integration and feedback mechanism
+- *(docusaurus)* Add local search functionality to documentation site
 
 ### 📚 Documentation
 
@@ -34,17 +47,17 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- Bump project version to 0.2.0
-- Add git-cliff configuration for changelog generation
-- Update VSCode spell-checking dictionary
-- Add VSCode spell-checking configuration
-- Add custom dictionary for spell checking
+- *(js)* Bump project version to 0.2.0
+- *(git-cliff)* Add git-cliff configuration for changelog generation
+- *(spell-checking)* Update VSCode spell-checking dictionary
+- *(vscode)* Add VSCode spell-checking configuration
+- *(spellcheck)* Add custom dictionary for spell checking
 
-## [0.1.0] - 2025-02-24
+## [0.1.0] - 2025-03-05
 
 ### 🚀 Features
 
-- Add search functionality to site navigation
+- *(docusaurus)* Add search functionality to site navigation
 
 ### 📚 Documentation
 
@@ -73,8 +86,8 @@
 
 ### ⚙️ Miscellaneous Tasks
 
-- Add footer links and update navigation label
-- Refine project configuration and branding
-- Update Docusaurus configuration and add favicon
+- *(docusaurus)* Add footer links and update navigation label
+- *(docusaurus)* Refine project configuration and branding
+- *(docusaurus)* Update Docusaurus configuration and add favicon
 
 <!-- Сгенерировано с помощью git-cliff -->
