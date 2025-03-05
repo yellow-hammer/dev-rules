@@ -11,9 +11,9 @@
 
 ### ⚙️ Miscellaneous Tasks
 
+- *(git-cliff)* Update commit parser configuration
 - *(spell-checking)* Update spell-checking dictionary
 - *(vscode)* Add npm audit task to VSCode tasks configuration
-- *(git-cliff)* Generate CHANGELOG.md with git-cliff
 
 ## [0.2.0] - 2025-03-05
 
