@@ -70,8 +70,33 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Ссылки',
+          title: 'Сообщество',
           items: [
+            {
+              label: 'Обсудить',
+              href: 'https://github.com/yellow-hammer/dev-rules/discussions',
+            },
+            {
+              label: 'Отправить отзыв',
+              href: 'https://github.com/yellow-hammer/dev-rules/issues',
+            },
+            {
+              label: 'Предложить изменения',
+              href: 'https://github.com/yellow-hammer/dev-rules/pulls',
+            }
+          ],
+        },
+        {
+          title: 'Больше информации',
+          items: [
+            {
+              label: 'Журнал изменений',
+              href: 'https://github.com/yellow-hammer/dev-rules/blob/main/CHANGELOG.md',
+            },
+            {
+              label: 'Релизы',
+              href: 'https://github.com/yellow-hammer/dev-rules/releases',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/yellow-hammer',
@@ -81,7 +106,16 @@ const config = {
               href: 'https://t.me/YellowHummer',
             },
           ],
-        }
+        },
+        {
+          title: 'Юридическая информация',
+          items: [
+            {
+              label: 'Лицензия',
+              href: 'https://github.com/yellow-hammer/dev-rules/blob/main/LICENSE',
+            },
+          ],
+        },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Yellow Hammer`,
     },
