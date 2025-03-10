@@ -6,10 +6,14 @@
     "spellright.documentTypes": [
         "markdown",
         "latex",
-        "plaintext"
+        "plaintext",
+        "scminput"
     ],
     "spellright.parserByClass": {
         "bsl": {
+            "parser": "plain"
+        },
+        "scminput": {
             "parser": "plain"
         }
     }
