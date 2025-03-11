@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 sidebar_label: Оформление
 title: Оформление
 ---
@@ -54,7 +54,7 @@ title: Оформление
 
 Это единственный "контракт" между разработчиками касающихся типизации. Для быстрого создания описания есть специальная возможность в конфигураторе:
 
-![images](img/module-refactor.png)
+![images](_img/module-refactor.png)
 
 1. [Имя функции не должно начинаться с "Получить"](https://1c-syntax.github.io/bsl-language-server/diagnostics/FunctionNameStartsWithGet/)
 
@@ -114,7 +114,7 @@ title: Оформление
 
 Обязательно включить отображение непечатных символов. [ИТС: Отобразить непечатаемые символы](https://its.1c.ru/db/pub101advice/content/12/hdoc)
 
-![image.png](img/module-tab.png)
+![image.png](_img/module-tab.png)
 
 Для удобства рекомендуется использовать символ табуляции `│`
 

@@ -1,7 +1,7 @@
 ---
-sidebar_position: 12
-sidebar_label: Перевод на код-ревью
-title: Код-ревью
+sidebar_position: 15
+sidebar_label: IDE
+title: IDE
 ---
 
 ## Общие сведения

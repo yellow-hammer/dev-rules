@@ -1,7 +1,8 @@
 ---
-sidebar_position: 16
-sidebar_label: Окружения
+id: environments
 title: Окружения
+description: Руководство по окружениям и их настройке
+sidebar_position: 1
 ---
 
 ## Общие сведения

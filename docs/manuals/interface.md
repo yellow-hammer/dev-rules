@@ -1,7 +1,9 @@
 ---
-sidebar_position: 1
-sidebar_label: Интерфейс
+id: interface
 title: Интерфейс
+description: Руководство по интерфейсу системы
+sidebar_position: 3
+sidebar_label: Интерфейс
 ---
 
 ## Список элементов интерфейса 1С:Предприятия 8
