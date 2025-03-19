@@ -66,6 +66,9 @@ const config = {
         }
       ],
     },
+    prism: {
+      additionalLanguages: ['bsl'],
+    },
     footer: {
       style: 'dark',
       links: [
@@ -141,6 +144,10 @@ const config = {
     ],
   ],
 
+  stylesheets: [
+    'src/css/custom.css',
+  ],
+
 };
 
-module.exports = config; 
+module.exports = config;
