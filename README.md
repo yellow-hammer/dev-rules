@@ -1,6 +1,7 @@
 # Гид по внутренним процессам и стандартам разработки
 
 [![OpenYellow](https://img.shields.io/endpoint?url=https://openyellow.org/data/badges/6/937499493.json)](https://openyellow.org/grid?data=top&repo=937499493)
+
 [yellow-hammer.github.io/dev-rules](https://yellow-hammer.github.io/dev-rules/)
 
 ## Описание
