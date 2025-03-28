@@ -25,6 +25,12 @@ const config = {
   
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    mermaid: true,
+  },
+  
+  themes: ['@docusaurus/theme-mermaid'],
   
   presets: [
     [
@@ -46,6 +52,9 @@ const config = {
   ],
 
   themeConfig: {
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
+    },
     navbar: {
       title: 'Соглашение о разработке',
       items: [
