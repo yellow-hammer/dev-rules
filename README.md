@@ -3,6 +3,7 @@
 [![Stars](https://img.shields.io/github/stars/yellow-hammer/dev-rules.svg?label=Github%20%E2%98%85&a)](https://github.com/yellow-hammer/dev-rules/stargazers)
 [![Release](https://img.shields.io/github/v/release/yellow-hammer/dev-rules?include_prereleases&label=last%20release&style=badge)](https://github.com/yellow-hammer/dev-rules/releases/latest)
 [![OpenYellow](https://img.shields.io/endpoint?url=https://openyellow.org/data/badges/6/937499493.json)](https://openyellow.org/grid?data=top&repo=937499493)
+[![Deploy to GitHub Pages](https://github.com/yellow-hammer/dev-rules/actions/workflows/deploy.yml/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/deploy.yml)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 [yellow-hammer.github.io/dev-rules](https://yellow-hammer.github.io/dev-rules/)
