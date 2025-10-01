@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://yellow-hammer.github.io/dev-rules/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all documentation
+Allow: /docs/
+Allow: /assets/
+Allow: /img/
+
+# Allow search
+Allow: /search
