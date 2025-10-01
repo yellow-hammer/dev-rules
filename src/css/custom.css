@@ -117,28 +117,28 @@ pre[class*="language-bsl"] {
 
 /* Компактный футер */
 .footer {
-  padding: 2rem 0 1rem 0 !important;
+  padding: 1rem 0 0.5rem 0 !important;
 }
 
 .footer__links {
-  margin-bottom: 1rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .footer__col {
-  margin-bottom: 0.5rem !important;
-}
-
-.footer__title {
-  margin-bottom: 0.5rem !important;
-  font-size: 0.9rem !important;
-}
-
-.footer__item {
   margin-bottom: 0.25rem !important;
 }
 
-.footer__link-item {
+.footer__title {
+  margin-bottom: 0.25rem !important;
   font-size: 0.85rem !important;
+}
+
+.footer__item {
+  margin-bottom: 0.125rem !important;
+}
+
+.footer__link-item {
+  font-size: 0.8rem !important;
   padding: 0.125rem 0 !important;
 }
 
