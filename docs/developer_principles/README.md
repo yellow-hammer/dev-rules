@@ -10,6 +10,7 @@ keywords:
   - YAGNI
   - SOLID
   - принципы разработки
+  - архитектура
 slug: /developer-principles
 ---
 
@@ -23,6 +24,7 @@ slug: /developer-principles
 - [DRY - Не повторяйся](DRY.md)
 - [YAGNI - Вам это не понадобится](YAGNI.md)
 - [SOLID - Принципы объектно-ориентированного программирования](SOLID.md)
+- [Архитектура 1С-решений](ARCHITECTURE.md)
 
 ## Введение
 
