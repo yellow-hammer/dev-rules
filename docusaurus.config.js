@@ -24,9 +24,12 @@ const config = {
   trailingSlash: false,
   
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-
+  
+  // Markdown configuration
   markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
     mermaid: true,
   },
   
