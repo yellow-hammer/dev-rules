@@ -148,10 +148,6 @@ const config = {
           title: 'Сообщество',
           items: [
             {
-              label: 'Обсудить',
-              href: 'https://github.com/yellow-hammer/dev-rules/discussions',
-            },
-            {
               label: 'Отправить отзыв',
               href: 'https://github.com/yellow-hammer/dev-rules/issues',
             },
@@ -167,14 +163,6 @@ const config = {
             {
               label: 'Журнал изменений',
               href: 'https://github.com/yellow-hammer/dev-rules/blob/main/CHANGELOG.md',
-            },
-            {
-              label: 'Релизы',
-              href: 'https://github.com/yellow-hammer/dev-rules/releases',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/yellow-hammer',
             },
             {
               label: 'Telegram',
