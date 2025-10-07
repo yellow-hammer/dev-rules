@@ -63,6 +63,7 @@
 
 - [Несколько документов около разработки 1С.](https://github.com/arkuznetsov/some1cdocs)
 - [Набор практик и стандартов для качественной разработки в 1С](https://github.com/Razdolie/dev-rules)
+- [Желтый клуб](https://t.me/yellowclub_official)
 
 ---
 Наполнение страниц в процессе. Следите за обновлениями.
