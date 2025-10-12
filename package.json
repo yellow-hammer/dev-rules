@@ -15,7 +15,8 @@
     "lint:md": "markdownlint '**/*.md' --ignore node_modules",
     "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --fix",
     "format": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postbuild": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.1",
@@ -33,6 +34,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
+    "glob": "^11.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.4",
     "markdownlint-cli": "^0.45.0",
