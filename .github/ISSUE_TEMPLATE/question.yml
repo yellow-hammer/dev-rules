@@ -1,0 +1,46 @@
+---
+
+**Ваш вопрос**
+Опишите, что именно вызывает затруднения или требует пояснения.
+
+**Контекст**
+(по желанию) Уточните, где именно возник вопрос (раздел, страница, пример).
+
+**Что вы уже пробовали**
+(по желанию) Опишите, что вы уже изучили или попробовали.
+
+Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../CONTRIBUTING.md).
+name: 'Вопрос по документации'
+description: Задать вопрос или получить разъяснение по содержанию
+labels:
+	- question
+body:
+	- type: markdown
+		attributes:
+			value: |
+				Спасибо за ваш вопрос! Пожалуйста, заполните все обязательные поля.
+	- type: textarea
+		id: question
+		attributes:
+			label: Ваш вопрос
+			description: Опишите, что именно вызывает затруднения или требует пояснения.
+		validations:
+			required: true
+	- type: textarea
+		id: context
+		attributes:
+			label: Контекст
+			description: (по желанию) Уточните, где именно возник вопрос (раздел, страница, пример).
+		validations:
+			required: false
+	- type: textarea
+		id: tried
+		attributes:
+			label: Что вы уже пробовали
+			description: (по желанию) Опишите, что вы уже изучили или попробовали.
+		validations:
+			required: false
+	- type: markdown
+		attributes:
+			value: |
+				Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../../CONTRIBUTING.md).
