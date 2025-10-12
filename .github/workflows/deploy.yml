@@ -41,7 +41,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          # Используем GITHUB_TOKEN вместо PERSONAL_TOKEN для большей безопасности
+          # Если нужны расширенные права, можно использовать personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           # Добавляем .nojekyll чтобы включить файлы начинающиеся с _
           enable_jekyll: false
