@@ -13,7 +13,9 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint:md": "markdownlint '**/*.md' --ignore node_modules",
-    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --fix"
+    "lint:md:fix": "markdownlint '**/*.md' --ignore node_modules --fix",
+    "format": "prettier --write .",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.1",
@@ -31,7 +33,19 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
-    "markdownlint-cli": "^0.45.0"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.4",
+    "markdownlint-cli": "^0.45.0",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "*.{md,mdx}": [
+      "markdownlint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,json,css}": [
+      "prettier --write"
+    ]
   },
   "browserslist": {
     "production": [

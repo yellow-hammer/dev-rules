@@ -1,0 +1,33 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./build",
+      "numberOfRuns": 3
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.8 }],
+        "categories:accessibility": ["error", { "minScore": 0.9 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["warn", { "minScore": 0.9 }],
+
+        "first-contentful-paint": ["warn", { "maxNumericValue": 2000 }],
+        "interactive": ["warn", { "maxNumericValue": 3500 }],
+        "max-potential-fid": ["warn", { "maxNumericValue": 300 }],
+
+        "maskable-icon": "off",
+        "service-worker": "off",
+        "offline-start-url": "off",
+        "installable-manifest": "off",
+
+        "aria-required-children": "error",
+        "aria-required-parent": "error",
+        "aria-roles": "error",
+        "document-title": "error",
+        "html-has-lang": "error",
+        "meta-description": "error",
+        "meta-viewport": "error"
+      }
+    }
+  }
+}
