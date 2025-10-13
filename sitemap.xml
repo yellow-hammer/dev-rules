@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/storage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/search.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/request.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/printed_forms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/prefix_comments.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/metadata.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/manuals.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/layout.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/input_based_on.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/ide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/glossary.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/forms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/extensions.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/developer-principles.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/cicd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/blocking_forms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/begin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/404.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/metadata/subsystem.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/metadata/scheduled_jobs.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/metadata/roles.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/metadata/reports.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/metadata/information_registers.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/metadata/event_subscriptions.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/metadata/documents.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/metadata/common_modules.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/metadata/catalogs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/metadata/accumulation_registers.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/manuals/users.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/manuals/update_config.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/manuals/storage.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/manuals/environments.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/developer-principles/yagni.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/developer-principles/solid.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/developer-principles/kiss.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/developer-principles/dry.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc
+      >https://yellow-hammer.github.io/dev-rules/developer-principles/architecture.html</loc
+    >
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/cicd/testing.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/cicd/sonar.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/cicd/pipelines.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://yellow-hammer.github.io/dev-rules/cicd/code-review.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <lastmod>2025-10-13T18:51:29.747Z</lastmod>
+  </url>
+</urlset>
