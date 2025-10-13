@@ -11,7 +11,7 @@ sidebar_position: 16
 
 ## Содержание
 
-- [Code-review](cicd/code-review/README.md)
-- [Пайплайны](cicd/pipelines/README.md)
-- [Тестирование](cicd/testing/README.md)
-- [SonarQube](cicd/sonar/README.md)
+- [Code-review](code-review/README.md)
+- [Пайплайны](pipelines/README.md)
+- [Тестирование](testing/README.md)
+- [SonarQube](sonar/README.md)
