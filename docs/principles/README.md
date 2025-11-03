@@ -1,5 +1,5 @@
 ---
-id: developer-principles
+id: principles
 title: Принципы эффективной разработки
 sidebar_label: Принципы разработки
 sidebar_position: 13
@@ -11,7 +11,7 @@ keywords:
   - SOLID
   - принципы разработки
   - архитектура
-slug: /developer-principles
+slug: /principles
 ---
 
 ## Общие сведения

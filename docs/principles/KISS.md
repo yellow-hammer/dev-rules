@@ -8,7 +8,7 @@ keywords:
   - KISS
   - простота
   - принципы программирования
-slug: /developer-principles/kiss
+slug: /principles/kiss
 ---
 
 ## KISS (Keep It Simple, Stupid) - Делай проще
@@ -45,7 +45,7 @@ slug: /developer-principles/kiss
     Для Каждого Строка Из Документ.Товары Цикл
         Сумма = Сумма + Строка.Сумма;
     КонецЦикла;
-    
+
     Возврат Сумма;
 КонецФункции;
 ```
