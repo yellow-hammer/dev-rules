@@ -10,7 +10,7 @@ Crawl-delay: 10
 
 # Common documentation paths
 Allow: /docs/
-Allow: /developer-principles/
+Allow: /principles/
 Allow: /metadata/
 Allow: /manuals/
 Allow: /cicd/
