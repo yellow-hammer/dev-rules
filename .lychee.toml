@@ -1,0 +1,3 @@
+[exclude]
+# Исключаем домен myblog-1c.ru, так как он возвращает 403 Forbidden
+domains = ["myblog-1c.ru", "www.myblog-1c.ru"]
