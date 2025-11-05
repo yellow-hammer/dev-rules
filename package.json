@@ -18,7 +18,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "prepare": "husky install",
-    "postbuild": "node scripts/generate-sitemap.js"
+    "postbuild": "node scripts/generate-sitemap.js",
+    "lighthouse:mobile": "lighthouse http://localhost:3000 --emulated-form-factor=mobile --only-categories=performance,accessibility,best-practices,seo --output=html --output-path=./lighthouse-reports/mobile.html --chrome-flags=\"--headless\"",
+    "lighthouse:desktop": "lighthouse http://localhost:3000 --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=html --output-path=./lighthouse-reports/desktop.html --chrome-flags=\"--headless\"",
+    "lighthouse:ci": "lhci autorun"
   },
   "dependencies": {
     "@docusaurus/core": "^3.9.1",

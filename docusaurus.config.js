@@ -121,7 +121,11 @@ const config = {
       { property: 'article:tag', content: '1С, разработка, стандарты' },
 
       // Mobile and responsive
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
+      {
+        name: 'viewport',
+        content:
+          'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover',
+      },
       { name: 'theme-color', content: '#ffd700' },
       { name: 'msapplication-TileColor', content: '#ffd700' },
       { name: 'msapplication-config', content: '/dev-rules/browserconfig.xml' },

@@ -109,7 +109,14 @@
     "ITIL",
     "Bingbot",
     "AhrefsBot",
-    "SemrushBot"
+    "SemrushBot",
+    "lhci",
+    "Kbps",
+    "contentful",
+    "LCP",
+    "TBT",
+    "CLS",
+    "FID"
   ],
   "ignorePaths": [
     "node_modules/**",
@@ -119,7 +126,8 @@
     "**/*.lock",
     "**/*.min.js",
     "**/*.bundle.js",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "lighthouse-reports/**"
   ],
   "ignoreWords": [],
   "flagWords": [],

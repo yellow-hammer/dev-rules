@@ -2,7 +2,21 @@
   "ci": {
     "collect": {
       "staticDistDir": "./build",
-      "numberOfRuns": 3
+      "numberOfRuns": 3,
+      "settings": {
+        "emulatedFormFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "cpuSlowdownMultiplier": 4
+        },
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 915,
+          "deviceScaleFactor": 2.625
+        }
+      }
     },
     "assert": {
       "assertions": {
@@ -12,6 +26,9 @@
         "categories:seo": ["warn", { "minScore": 0.9 }],
 
         "first-contentful-paint": ["warn", { "maxNumericValue": 2000 }],
+        "largest-contentful-paint": ["warn", { "maxNumericValue": 2500 }],
+        "total-blocking-time": ["warn", { "maxNumericValue": 300 }],
+        "cumulative-layout-shift": ["warn", { "maxNumericValue": 0.1 }],
         "interactive": ["warn", { "maxNumericValue": 3500 }],
         "max-potential-fid": ["warn", { "maxNumericValue": 300 }],
 
@@ -20,6 +37,9 @@
         "offline-start-url": "off",
         "installable-manifest": "off",
 
+        "viewport": "error",
+        "touch-targets": "warn",
+        "font-display": "warn",
         "aria-required-children": "error",
         "aria-required-parent": "error",
         "aria-roles": "error",
