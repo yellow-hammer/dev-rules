@@ -1,4 +1,6 @@
 name: Проверка орфографии
+permissions:
+  contents: read
 
 on:
   push:
