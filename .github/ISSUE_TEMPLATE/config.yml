@@ -3,6 +3,9 @@ contact_links:
   - name: 💬 Обсуждение
     url: https://github.com/yellow-hammer/dev-rules/discussions
     about: Задайте вопрос или предложите обсуждение в Discussions
-  - name: 📚 Документация
-    url: https://yellow-hammer.github.io/dev-rules/
-    about: Посетите документацию проекта
+  - name: 📝 Кодекс поведения
+    url: https://github.com/yellow-hammer/dev-rules/blob/main/CODE_OF_CONDUCT.md
+    about: Ознакомьтесь с кодексом поведения участников проекта
+  - name: 🤝 Руководство по внесению изменений
+    url: https://github.com/yellow-hammer/dev-rules/blob/main/CONTRIBUTING.md
+    about: Узнайте, как внести свой вклад в проект
