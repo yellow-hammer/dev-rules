@@ -9,7 +9,7 @@ title: IDE
 1. Доработки должны соответствовать регламенту разработки
 2. Проверить свой код с помощью **[Phoenix Bsl](https://otymko.github.io/phoenixbsl/)**.
 
-    ![image](img/phoenix.png)
+   ![image](img/phoenix.png)
 
 Файл с настройками: **[settingsBSL.json](file/settingsBSL.json)**
 

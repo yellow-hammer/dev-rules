@@ -103,7 +103,10 @@
     "ATAM",
     "коммитах",
     "коммита",
-    "коммитом"
+    "коммитом",
+    "atrule",
+    "attr-value",
+    "ITIL"
   ],
   "ignorePaths": [
     "node_modules/**",

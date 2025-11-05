@@ -1,40 +1,32 @@
 {
-    "spellright.language": [
-        "en",
-        "ru"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext",
-        "scminput"
-    ],
-    "spellright.parserByClass": {
-        "bsl": {
-            "parser": "plain"
-        },
-        "scminput": {
-            "parser": "plain"
-        }
+  "spellright.language": ["en", "ru"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "scminput"],
+  "spellright.parserByClass": {
+    "bsl": {
+      "parser": "plain"
     },
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#1e1e2e",
-        "activityBar.activeBorder": "#89b4fa",
-        "activityBar.background": "#1e1e2e",
-        "activityBar.foreground": "#cdd6f4",
-        "activityBar.inactiveForeground": "#cdd6f499",
-        "activityBarBadge.background": "#1970d4ef",
-        "activityBarBadge.foreground": "#1e1e2e",
-        "sash.hoverBorder": "#89b4fa",
-        "statusBar.background": "#313244",
-        "statusBar.foreground": "#cdd6f4",
-        "statusBarItem.hoverBackground": "#45475a",
-        "statusBarItem.remoteBackground": "#313244",
-        "statusBarItem.remoteForeground": "#cdd6f4",
-        "titleBar.activeBackground": "#313244",
-        "titleBar.activeForeground": "#cdd6f4",
-        "titleBar.inactiveBackground": "#31324499",
-        "titleBar.inactiveForeground": "#cdd6f499",
-        "commandCenter.border": "#cdd6f499"
+    "scminput": {
+      "parser": "plain"
     }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#1e1e2e",
+    "activityBar.activeBorder": "#89b4fa",
+    "activityBar.background": "#1e1e2e",
+    "activityBar.foreground": "#cdd6f4",
+    "activityBar.inactiveForeground": "#cdd6f499",
+    "activityBarBadge.background": "#1970d4ef",
+    "activityBarBadge.foreground": "#1e1e2e",
+    "sash.hoverBorder": "#89b4fa",
+    "statusBar.background": "#313244",
+    "statusBar.foreground": "#cdd6f4",
+    "statusBarItem.hoverBackground": "#45475a",
+    "statusBarItem.remoteBackground": "#313244",
+    "statusBarItem.remoteForeground": "#cdd6f4",
+    "titleBar.activeBackground": "#313244",
+    "titleBar.activeForeground": "#cdd6f4",
+    "titleBar.inactiveBackground": "#31324499",
+    "titleBar.inactiveForeground": "#cdd6f499",
+    "commandCenter.border": "#cdd6f499"
+  }
 }

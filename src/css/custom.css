@@ -29,8 +29,8 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-code[class*="language-bsl"],
-pre[class*="language-bsl"] {
+code[class*='language-bsl'],
+pre[class*='language-bsl'] {
   color: #f8f8f2;
   background: #282a36;
   font-family: 'Fira Code', 'Courier New', Courier, monospace;

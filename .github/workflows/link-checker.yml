@@ -5,11 +5,11 @@ permissions:
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   schedule:
-    - cron: "0 0 * * 0"  # Запуск каждое воскресенье
+    - cron: '0 0 * * 0' # Запуск каждое воскресенье
   workflow_dispatch:
 
 jobs:

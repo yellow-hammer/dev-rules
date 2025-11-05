@@ -8,7 +8,7 @@ on:
 
 # Разрешаем одновременно только один деплой
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -47,4 +47,4 @@ jobs:
           publish_dir: ./build
           # Добавляем .nojekyll чтобы включить файлы начинающиеся с _
           enable_jekyll: false
-          force_orphan: true # Создает ветку gh-pages заново 
+          force_orphan: true # Создает ветку gh-pages заново
