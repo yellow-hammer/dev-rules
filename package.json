@@ -16,6 +16,7 @@
     "lint:md:fix": "markdownlint \"**/*.md\" --ignore node_modules --ignore build --ignore .docusaurus --fix",
     "spellcheck": "cspell --no-must-find-files \"**/*.{md,mdx,js,jsx,ts,tsx}\"",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky install",
     "postbuild": "node scripts/generate-sitemap.js"
   },
@@ -49,9 +50,18 @@
       "prettier --write",
       "cspell --no-must-find-files"
     ],
-    "*.{js,jsx,ts,tsx,json,css}": [
+    "*.{js,jsx,ts,tsx,json,css,scss,html}": [
       "prettier --write",
       "cspell --no-must-find-files"
+    ],
+    "*.{yml,yaml}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "package-lock.json": [
+      "prettier --write"
     ]
   },
   "browserslist": {

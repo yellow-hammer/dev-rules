@@ -149,6 +149,44 @@
         }
       },
       "group": "test"
+    },
+    {
+      "label": "✨ Проверить форматирование",
+      "type": "npm",
+      "script": "format:check",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "🎨 Форматировать код",
+      "type": "npm",
+      "script": "format",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "🔧 Настроить Git хуки (husky)",
+      "type": "npm",
+      "script": "prepare",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
     }
   ]
 }
