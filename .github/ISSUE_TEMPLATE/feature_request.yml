@@ -1,55 +1,41 @@
----
-
-**Опишите улучшение**
-Кратко опишите, что и зачем вы предлагаете изменить или добавить.
-
-**Мотивация и контекст**
-Почему это важно? Какую проблему решает?
-
-**Возможная реализация**
-(по желанию) Опишите, как это можно реализовать.
-
-**Связанные материалы**
-
-Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../CONTRIBUTING.md).
 name: 'Предложение улучшения'
 description: Предложить идею или улучшение для документации
 labels:
-	- enhancement
+  - enhancement
 body:
-	- type: markdown
-		attributes:
-			value: |
-				Спасибо за ваш вклад! Пожалуйста, заполните все обязательные поля.
-	- type: textarea
-		id: improvement
-		attributes:
-			label: Опишите улучшение
-			description: Кратко опишите, что и зачем вы предлагаете изменить или добавить.
-		validations:
-			required: true
-	- type: textarea
-		id: motivation
-		attributes:
-			label: Мотивация и контекст
-			description: Почему это важно? Какую проблему решает?
-		validations:
-			required: false
-	- type: textarea
-		id: implementation
-		attributes:
-			label: Возможная реализация
-			description: (по желанию) Опишите, как это можно реализовать.
-		validations:
-			required: false
-	- type: textarea
-		id: related
-		attributes:
-			label: Связанные материалы
-			description: Ссылки на разделы, которые стоит изменить, или примеры из других проектов
-		validations:
-			required: false
-	- type: markdown
-		attributes:
-			value: |
-				Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../../CONTRIBUTING.md).
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за ваш вклад! Пожалуйста, заполните все обязательные поля.
+  - type: textarea
+    id: improvement
+    attributes:
+      label: Опишите улучшение
+      description: Кратко опишите, что и зачем вы предлагаете изменить или добавить.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Мотивация и контекст
+      description: Почему это важно? Какую проблему решает?
+    validations:
+      required: false
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Возможная реализация
+      description: (по желанию) Опишите, как это можно реализовать.
+    validations:
+      required: false
+  - type: textarea
+    id: related
+    attributes:
+      label: Связанные материалы
+      description: Ссылки на разделы, которые стоит изменить, или примеры из других проектов
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../../CONTRIBUTING.md).

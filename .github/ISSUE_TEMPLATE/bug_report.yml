@@ -1,82 +1,63 @@
----
-
-**Описание проблемы**
-Опишите, в чем заключается ошибка или проблема.
-
-**Шаги для воспроизведения**
-1. ...
-2. ...
-3. ...
-
-**Ожидаемое поведение**
-Что должно было произойти?
-
-**Скриншоты/Примеры**
-(по желанию) Добавьте скриншоты или примеры, если это поможет понять проблему.
-
-**Дополнительная информация**
-
-Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../CONTRIBUTING.md).
 name: 'Баг'
 description: Сообщить об ошибке или проблеме в документации
 labels:
-	- bug
+  - bug
 body:
-	- type: markdown
-		attributes:
-			value: |
-				Спасибо за ваш вклад! Пожалуйста, заполните все обязательные поля.
-	- type: textarea
-		id: description
-		attributes:
-			label: Описание проблемы
-			description: В чем заключается ошибка или проблема?
-		validations:
-			required: true
-	- type: textarea
-		id: steps
-		attributes:
-			label: Шаги для воспроизведения
-			description: Опишите шаги, чтобы воспроизвести проблему
-			placeholder: 1. ...\n2. ...\n3. ...
-		validations:
-			required: false
-	- type: textarea
-		id: expected
-		attributes:
-			label: Ожидаемое поведение
-			description: Что должно было произойти?
-		validations:
-			required: false
-	- type: textarea
-		id: screenshots
-		attributes:
-			label: Скриншоты/Примеры
-			description: (по желанию) Добавьте скриншоты или примеры
-		validations:
-			required: false
-	- type: input
-		id: node_version
-		attributes:
-			label: Версия Node.js
-			description: Например, 20.x
-		validations:
-			required: false
-	- type: input
-		id: os
-		attributes:
-			label: Операционная система
-			description: Например, Windows 11, macOS Ventura
-		validations:
-			required: false
-	- type: input
-		id: page
-		attributes:
-			label: Ссылка на страницу/раздел
-			description: Где возникла проблема?
-		validations:
-			required: false
-	- type: markdown
-		attributes:
-			value: |
-				Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../../CONTRIBUTING.md).
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за ваш вклад! Пожалуйста, заполните все обязательные поля.
+  - type: textarea
+    id: description
+    attributes:
+      label: Описание проблемы
+      description: В чем заключается ошибка или проблема?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Шаги для воспроизведения
+      description: Опишите шаги, чтобы воспроизвести проблему
+      placeholder: 1. ...\n2. ...\n3. ...
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ожидаемое поведение
+      description: Что должно было произойти?
+    validations:
+      required: false
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Скриншоты/Примеры
+      description: (по желанию) Добавьте скриншоты или примеры
+    validations:
+      required: false
+  - type: input
+    id: node_version
+    attributes:
+      label: Версия Node.js
+      description: Например, 20.x
+    validations:
+      required: false
+  - type: input
+    id: os
+    attributes:
+      label: Операционная система
+      description: Например, Windows 11, macOS Ventura
+    validations:
+      required: false
+  - type: input
+    id: page
+    attributes:
+      label: Ссылка на страницу/раздел
+      description: Где возникла проблема?
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        Пожалуйста, убедитесь, что похожая Issue ещё не существует и вы ознакомились с [CONTRIBUTING.md](../../CONTRIBUTING.md).
