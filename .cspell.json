@@ -106,7 +106,10 @@
     "коммитом",
     "atrule",
     "attr-value",
-    "ITIL"
+    "ITIL",
+    "Bingbot",
+    "AhrefsBot",
+    "SemrushBot"
   ],
   "ignorePaths": [
     "node_modules/**",

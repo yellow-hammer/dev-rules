@@ -80,13 +80,14 @@ const config = {
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'Соглашение о разработке' },
       { property: 'og:locale', content: 'ru_RU' },
+      { property: 'og:locale:alternate', content: 'en_US' },
       {
         property: 'og:image',
         content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
       },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { property: 'og:image:type', content: 'image/jpeg' },
+      { property: 'og:image:type', content: 'image/png' },
       {
         property: 'og:image:alt',
         content:
@@ -96,6 +97,7 @@ const config = {
         property: 'og:image:secure_url',
         content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
       },
+      { property: 'og:determiner', content: 'auto' },
 
       // Twitter Cards
       { name: 'twitter:card', content: 'summary_large_image' },
@@ -110,6 +112,7 @@ const config = {
         content:
           'Соглашение о разработке - Набор практик и стандартов для качественной разработки в 1С',
       },
+      { name: 'twitter:domain', content: 'yellow-hammer.github.io' },
 
       // Additional social media
       { property: 'article:publisher', content: 'https://github.com/yellow-hammer' },
@@ -233,6 +236,8 @@ const config = {
         docsRouteBasePath: '/',
       },
     ],
+    // SEO Plugin for dynamic canonical URLs and meta tags
+    require.resolve('./src/plugins/seo-plugin'),
     // Plugin for structured data
     function structuredDataPlugin() {
       return {
@@ -306,14 +311,8 @@ const config = {
   stylesheets: ['src/css/custom.css'],
 
   // Additional HTML head tags
+  // Примечание: canonical URL теперь добавляется динамически через SEO плагин
   headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'canonical',
-        href: 'https://yellow-hammer.github.io/dev-rules/',
-      },
-    },
     {
       tagName: 'link',
       attributes: {
