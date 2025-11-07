@@ -1,0 +1,76 @@
+# robots.txt для https://yellow-hammer.github.io/dev-rules/
+# Обновлено для улучшения SEO и индексации
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://yellow-hammer.github.io/dev-rules/sitemap-index.xml
+Sitemap: https://yellow-hammer.github.io/dev-rules/sitemap.xml
+
+# Crawl settings
+Crawl-delay: 1
+
+# Основные разделы документации
+Allow: /
+Allow: /docs/
+Allow: /principles/
+Allow: /metadata/
+Allow: /manuals/
+Allow: /cicd/
+Allow: /glossary/
+Allow: /forms/
+Allow: /storage/
+Allow: /request/
+Allow: /ide/
+Allow: /extensions/
+Allow: /layout/
+Allow: /prefix_comments/
+Allow: /printed_forms/
+Allow: /input_based_on/
+Allow: /blocking_forms/
+
+# Статические ресурсы
+Allow: /assets/
+Allow: /img/
+Allow: /static/
+Allow: /manifest.json
+Allow: /browserconfig.xml
+
+# Исключения - не индексировать
+Disallow: /search/
+Disallow: /404.html
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.docusaurus/
+Disallow: /node_modules/
+
+# Специальные правила для поисковых систем
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 1
+
+# Исключить ботов социальных сетей из индексации (они могут использовать sitemap)
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Ограничения для SEO-ботов
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
