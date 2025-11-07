@@ -1,0 +1,35 @@
+name: Broken Link Checker (HTML)
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0' # Запуск каждое воскресенье
+  workflow_dispatch:
+
+jobs:
+  checkLinks:
+    name: Проверка ссылок в HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Check links in built HTML
+        run: npm run check:links

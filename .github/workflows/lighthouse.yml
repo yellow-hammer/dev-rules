@@ -1,0 +1,59 @@
+name: Lighthouse CI
+permissions:
+  contents: read
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.mdx'
+      - 'src/**'
+      - 'static/**'
+      - 'docusaurus.config.js'
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: Lighthouse на Node.js ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Temporarily exclude 404.html from Lighthouse
+        run: |
+          if [ -f build/404.html ]; then
+            mv build/404.html build/404.html.bak
+          fi
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: './lighthouserc.json'
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+          artifactName: lighthouse-results-node-${{ matrix.node-version }}
+
+      - name: Restore 404.html
+        if: always()
+        run: |
+          if [ -f build/404.html.bak ]; then
+            mv build/404.html.bak build/404.html
+          fi

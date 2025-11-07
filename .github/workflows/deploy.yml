@@ -8,21 +8,57 @@ on:
 
 # Разрешаем одновременно только один деплой
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
+  # Тестируем сборку на разных версиях Node.js перед деплоем
+  test-build:
+    name: Тест сборки на Node.js ${{ matrix.node-version }}
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Check build output
+        run: |
+          if [ ! -d "build" ]; then
+            echo "❌ Ошибка: директория build не создана"
+            exit 1
+          fi
+          if [ ! -f "build/index.html" ]; then
+            echo "❌ Ошибка: файл build/index.html не найден"
+            exit 1
+          fi
+          echo "✅ Сборка успешна на Node.js ${{ matrix.node-version }}"
+
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    needs: test-build
     # Добавляем необходимые разрешения
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
@@ -39,10 +75,12 @@ jobs:
           git pull origin gh-pages || true
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          # Используем GITHUB_TOKEN вместо PERSONAL_TOKEN для большей безопасности
+          # Если нужны расширенные права, можно использовать personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           # Добавляем .nojekyll чтобы включить файлы начинающиеся с _
           enable_jekyll: false
-          force_orphan: true # Создает ветку gh-pages заново 
+          force_orphan: true # Создает ветку gh-pages заново

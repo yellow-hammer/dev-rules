@@ -1,0 +1,46 @@
+name: Build Test (Node.js Matrix)
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Сборка на Node.js ${{ matrix.node-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        run: npm run build
+
+      - name: Check build output
+        run: |
+          if [ ! -d "build" ]; then
+            echo "❌ Ошибка: директория build не создана"
+            exit 1
+          fi
+          if [ ! -f "build/index.html" ]; then
+            echo "❌ Ошибка: файл build/index.html не найден"
+            exit 1
+          fi
+          echo "✅ Сборка успешна на Node.js ${{ matrix.node-version }}"

@@ -1,0 +1,27 @@
+name: Link Checker
+
+permissions:
+  contents: read
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 0 * * 0' # Запуск каждое воскресенье
+  workflow_dispatch:
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2.7.0
+        with:
+          args: --verbose --no-progress --exclude '.*myblog-1c\.ru.*' './**/*.md' './**/*.mdx'
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
