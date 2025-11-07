@@ -1,0 +1,24 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Проверка формата коммита согласно Conventional Commits
+commit_regex='^(feat|fix|doc|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?: .{1,}'
+
+if ! grep -qE "$commit_regex" "$1"; then
+    echo "❌ Ошибка: Неверный формат сообщения коммита!"
+    echo ""
+    echo "Формат должен соответствовать Conventional Commits:"
+    echo "  <тип>(<область>): <описание>"
+    echo ""
+    echo "Типы: feat, fix, doc, style, refactor, perf, test, chore, ci, build, revert"
+    echo ""
+    echo "Примеры:"
+    echo "  feat(doc): добавить документацию по API"
+    echo "  fix(core): исправить обработку ошибок"
+    echo "  doc: обновить README"
+    echo ""
+    exit 1
+fi
+
+echo "✅ Формат коммита корректен"
+
