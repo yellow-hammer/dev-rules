@@ -1,36 +1,229 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Запустить Docusaurus",
-        "type": "shell",
-        "command": "npm start",
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "problemMatcher": []
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🔄 Установить Node.js из .nvmrc",
+      "type": "shell",
+      "command": "nvm use",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
       },
-      {
-        "label": "Собрать Docusaurus",
-        "type": "shell",
-        "command": "npm run build",
-        "group": "build",
-        "problemMatcher": []
+      "problemMatcher": []
+    },
+    {
+      "label": "📝 Проверить Markdown",
+      "type": "npm",
+      "script": "lint:md",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
       },
-      {
-        "label": "Установить зависимости",
-        "type": "shell",
-        "command": "npm install",
-        "group": "build",
-        "problemMatcher": []
+      "problemMatcher": {
+        "owner": "markdownlint",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^([^:]+):(\\d+):?\\s+(.+)$",
+          "file": 1,
+          "line": 2,
+          "message": 3
+        }
       },
-      {
-        "label": "Очистить кэш Docusaurus",
-        "type": "shell",
-        "command": "npm run clear",
-        "group": "build",
-        "problemMatcher": []
+      "group": {
+        "kind": "test",
+        "isDefault": true
       }
-    ]
-  }
+    },
+    {
+      "label": "🔧 Исправить Markdown",
+      "type": "npm",
+      "script": "lint:md:fix",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "▶️ Запустить Dev сервер",
+      "type": "npm",
+      "script": "start",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": {
+        "owner": "docusaurus",
+        "pattern": {
+          "regexp": "^.*$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting the development server",
+          "endsPattern": "Docusaurus website is running at"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "🏗️ Собрать проект",
+      "type": "npm",
+      "script": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "🧹 Очистить кэш",
+      "type": "npm",
+      "script": "clear",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📦 Установить зависимости (npm ci)",
+      "type": "shell",
+      "command": "npm ci",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🔍 Проверить уязвимости",
+      "type": "shell",
+      "command": "npm audit",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📖 Проверить орфографию",
+      "type": "npm",
+      "script": "spellcheck",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": {
+        "owner": "cspell",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "pattern": {
+          "regexp": "^(.+):(\\d+):(\\d+)\\s+-\\s+(.+)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      },
+      "group": "test"
+    },
+    {
+      "label": "✨ Проверить форматирование",
+      "type": "npm",
+      "script": "format:check",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "🎨 Форматировать код",
+      "type": "npm",
+      "script": "format",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "🔧 Настроить Git хуки (husky)",
+      "type": "npm",
+      "script": "prepare",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "🚀 Запустить собранный проект",
+      "type": "npm",
+      "script": "serve",
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": {
+        "owner": "docusaurus",
+        "pattern": {
+          "regexp": "^.*$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Starting the server",
+          "endsPattern": "Serving"
+        }
+      },
+      "group": "build"
+    },
+    {
+      "label": "🔗 Проверить ссылки",
+      "type": "npm",
+      "script": "check:links",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}
