@@ -1,0 +1,49 @@
+version: 2
+updates:
+  # Обновления для npm зависимостей
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+    open-pull-requests-limit: 10
+    labels:
+      - 'dependencies'
+      - 'npm'
+    commit-message:
+      prefix: 'chore'
+      prefix-development: 'chore'
+      include: 'scope'
+    groups:
+      docusaurus:
+        patterns:
+          - '@docusaurus/*'
+        update-types:
+          - 'minor'
+          - 'patch'
+      dev-dependencies:
+        patterns:
+          - '@cspell/*'
+          - '@docusaurus/module-type-aliases'
+          - '@docusaurus/types'
+          - 'cspell'
+          - 'glob'
+          - 'husky'
+          - 'lint-staged'
+          - 'markdownlint-cli'
+          - 'prettier'
+
+  # Обновления для GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'
