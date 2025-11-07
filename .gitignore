@@ -19,3 +19,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Spell checking cache
+.cspell/cache/
+
+# Lighthouse reports
+lighthouse-reports/
+lighthouse-report*.html
+lighthouse-report*.json

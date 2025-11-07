@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+.docusaurus/
+
+# Generated files
+package-lock.json
+*.lock
+
+# Auto-generated changelog (форматируется git-cliff)
+CHANGELOG.md
+
+# Minified files
+*.min.js
+*.bundle.js
+
