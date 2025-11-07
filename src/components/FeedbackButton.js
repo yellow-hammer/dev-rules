@@ -7,19 +7,19 @@ export default function FeedbackButton() {
   const [feedback, setFeedback] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const location = useLocation();
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       // Текущий URL страницы
       const pageUrl = window.location.href;
       const pagePath = location.pathname;
-      
+
       // Получаем заголовок страницы
       const pageTitle = document.title;
-      
+
       // Формируем тело для создания issue
       const issueBody = `
 ## Замечание к странице
@@ -33,15 +33,15 @@ ${feedback}
 ---
 *Отправлено через форму обратной связи на сайте.*
       `;
-      
+
       // Открываем GitHub issue в новой вкладке с предзаполненными данными
       const repoUrl = 'https://github.com/yellow-hammer/dev-rules/issues/new';
       const issueUrl = new URL(repoUrl);
       issueUrl.searchParams.append('title', `Замечание к странице: ${pageTitle}`);
       issueUrl.searchParams.append('body', issueBody);
-      
+
       window.open(issueUrl.toString(), '_blank');
-      
+
       // Сбрасываем форму
       setFeedback('');
       setIsOpen(false);
@@ -53,16 +53,13 @@ ${feedback}
       setIsSubmitting(false);
     }
   };
-  
+
   return (
     <div className={styles.feedbackContainer}>
-      <button 
-        className={styles.feedbackButton}
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <button className={styles.feedbackButton} onClick={() => setIsOpen(!isOpen)}>
         Отправить замечание
       </button>
-      
+
       {isOpen && (
         <div className={styles.feedbackForm}>
           <form onSubmit={handleSubmit}>
@@ -76,7 +73,9 @@ ${feedback}
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Отправка...' : 'Отправить'}
             </button>
-            <button type="button" onClick={() => setIsOpen(false)}>Отмена</button>
+            <button type="button" onClick={() => setIsOpen(false)}>
+              Отмена
+            </button>
           </form>
         </div>
       )}

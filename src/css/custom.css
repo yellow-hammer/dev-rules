@@ -27,4 +27,346 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-} 
+}
+
+code[class*='language-bsl'],
+pre[class*='language-bsl'] {
+  color: #f8f8f2;
+  background: #282a36;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #6272a4;
+}
+
+.token.punctuation {
+  color: #f8f8f2;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #ff79c6;
+}
+
+.token.boolean,
+.token.number {
+  color: #bd93f9;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #50fa7b;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+  color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+  color: #f1fa8c;
+}
+
+.token.keyword {
+  color: #8be9fd;
+}
+
+.token.regex,
+.token.important {
+  color: #ffb86c;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+/* Компактный футер */
+.footer {
+  padding: 1rem 0 0.5rem 0 !important;
+}
+
+.footer__links {
+  margin-bottom: 0.5rem !important;
+}
+
+.footer__col {
+  margin-bottom: 0.25rem !important;
+}
+
+.footer__title {
+  margin-bottom: 0.25rem !important;
+  font-size: 0.85rem !important;
+}
+
+.footer__item {
+  margin-bottom: 0.125rem !important;
+}
+
+.footer__link-item {
+  font-size: 0.8rem !important;
+  padding: 0.125rem 0 !important;
+}
+
+.footer__bottom {
+  padding-top: 0.5rem !important;
+  margin-top: 0.5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.footer__copyright {
+  font-size: 0.8rem !important;
+  margin: 0 !important;
+}
+
+/* Адаптивность для мобильных устройств */
+@media screen and (max-width: 768px) {
+  /* Улучшение читаемости на мобильных */
+  :root {
+    --ifm-font-size-base: 16px;
+    --ifm-line-height-base: 1.6;
+  }
+
+  /* Оптимизация навигации */
+  .navbar__brand {
+    font-size: 1rem;
+  }
+
+  .navbar__items {
+    gap: 0.5rem;
+  }
+
+  /* Оптимизация боковой панели */
+  .theme-doc-sidebar-container {
+    padding: 0.5rem;
+  }
+
+  .menu__link {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* Оптимизация основного контента */
+  .main-wrapper {
+    padding: 0.5rem;
+  }
+
+  .markdown {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .markdown h1 {
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .markdown h4 {
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Оптимизация таблиц */
+  .markdown table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.9rem;
+  }
+
+  .markdown table th,
+  .markdown table td {
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
+
+  /* Оптимизация кодовых блоков */
+  pre {
+    font-size: 0.875rem;
+    padding: 0.75rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0.375rem;
+  }
+
+  code {
+    font-size: 0.875rem;
+    padding: 0.125rem 0.25rem;
+  }
+
+  /* Оптимизация изображений */
+  .markdown img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+  }
+
+  /* Оптимизация футера */
+  .footer {
+    padding: 1.5rem 1rem 0.75rem 1rem !important;
+  }
+
+  .footer__links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer__col {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .footer__title {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .footer__item {
+    margin-bottom: 0.25rem !important;
+  }
+
+  .footer__link-item {
+    font-size: 0.85rem !important;
+  }
+
+  /* Оптимизация кнопок */
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    min-height: 44px; /* Минимальный размер для удобного нажатия */
+  }
+
+  /* Оптимизация поиска */
+  .navbar__search {
+    min-width: 150px;
+  }
+
+  .navbar__search-input {
+    font-size: 0.9rem;
+  }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+  .navbar__brand {
+    font-size: 0.9rem;
+  }
+
+  .markdown h1 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.3rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.15rem;
+  }
+
+  pre {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  code {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    padding: 1rem 0.75rem 0.5rem 0.75rem !important;
+  }
+
+  .footer__title {
+    font-size: 0.85rem !important;
+  }
+
+  .footer__link-item {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* Улучшение для планшетов */
+@media screen and (min-width: 769px) and (max-width: 996px) {
+  .markdown {
+    font-size: 17px;
+  }
+
+  pre {
+    font-size: 0.9rem;
+  }
+}
+
+/* Оптимизация для печати */
+@media print {
+  .navbar,
+  .footer,
+  .theme-doc-sidebar-container,
+  .pagination-nav,
+  .theme-doc-toc-desktop {
+    display: none !important;
+  }
+
+  .main-wrapper {
+    max-width: 100%;
+  }
+
+  .markdown {
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  pre {
+    page-break-inside: avoid;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
