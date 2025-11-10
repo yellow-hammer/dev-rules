@@ -42,7 +42,7 @@
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
     "broken-link-checker": "^0.7.8",
-    "cspell": "^9.2.2",
+    "cspell": "^9.3.0",
     "glob": "^11.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
