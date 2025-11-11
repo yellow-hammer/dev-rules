@@ -1,0 +1,35 @@
+{
+  "name": "Соглашение о разработке",
+  "short_name": "Dev Rules",
+  "description": "Набор практик и стандартов для качественной разработки в 1С",
+  "start_url": "/dev-rules/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffd700",
+  "orientation": "portrait-primary",
+  "scope": "/dev-rules/",
+  "lang": "ru",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "/dev-rules/img/icon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/dev-rules/img/og-image.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["developer", "documentation", "education"],
+  "screenshots": [
+    {
+      "src": "/dev-rules/img/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ]
+}
