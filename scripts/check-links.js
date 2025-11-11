@@ -1,17 +1,16 @@
 const blc = require('broken-link-checker');
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
+const http = require('node:http');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const buildDir = path.join(__dirname, '..', 'build');
 // Получаем канонический путь для buildDir для защиты от path traversal
 let canonicalBuildDir;
-try {
-  canonicalBuildDir = fs.realpathSync(buildDir);
-} catch (e) {
+if (!fs.existsSync(buildDir)) {
   console.error('❌ Ошибка: директория build не найдена. Сначала выполните сборку: npm run build');
   process.exit(1);
 }
+canonicalBuildDir = fs.realpathSync(buildDir);
 const indexPath = path.join(canonicalBuildDir, 'index.html');
 const PORT = 3001;
 const BASE_URL = `http://localhost:${PORT}`;
@@ -46,7 +45,7 @@ const server = http.createServer((req, res) => {
 
   // Получаем канонический путь для защиты от симлинков
   let filePath;
-  try {
+  if (fs.existsSync(safePath)) {
     filePath = fs.realpathSync(safePath);
 
     // Проверяем, что файл действительно находится внутри canonicalBuildDir
@@ -57,15 +56,14 @@ const server = http.createServer((req, res) => {
       res.end('Forbidden');
       return;
     }
-  } catch (e) {
-    // Если файл не существует, пробуем index.html для SPA роутинга
-    if (req.url.startsWith('/') && !req.url.includes('.')) {
-      filePath = indexPath;
-    } else {
-      res.writeHead(404);
-      res.end('Not Found');
-      return;
-    }
+  } else if (!req.url.startsWith('/') || req.url.includes('.')) {
+    // Если файл не существует и это не SPA маршрутизация, возвращаем 404
+    res.writeHead(404);
+    res.end('Not Found');
+    return;
+  } else {
+    // Если файл не существует, пробуем index.html для SPA маршрутизации
+    filePath = indexPath;
   }
 
   const ext = path.extname(filePath).toLowerCase();
@@ -183,10 +181,10 @@ const siteChecker = new blc.SiteChecker(options, {
 
       if (brokenLinks.length > 0) {
         console.log(`\n❌ Найдены битые ссылки:\n`);
-        brokenLinks.forEach((link) => {
+        for (const link of brokenLinks) {
           console.log(`   - ${link.url}`);
           console.log(`     Статус: ${link.statusCode || link.brokenReason}\n`);
-        });
+        }
         process.exit(1);
       } else {
         console.log(`\n✅ Все внешние ссылки работают корректно!`);
@@ -196,6 +194,27 @@ const siteChecker = new blc.SiteChecker(options, {
   },
 });
 
+// Функция для рекурсивного поиска всех HTML файлов
+function findHtmlFiles(dir, fileList = []) {
+  const files = fs.readdirSync(dir);
+
+  for (const file of files) {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+
+    if (stat.isDirectory()) {
+      findHtmlFiles(filePath, fileList);
+    } else if (file.endsWith('.html')) {
+      const relativePath = path.relative(canonicalBuildDir, filePath);
+      // Преобразуем путь в URL (заменяем обратные слэши на прямые для Windows)
+      const urlPath = relativePath.replaceAll('\\', '/');
+      fileList.push(urlPath);
+    }
+  }
+
+  return fileList;
+}
+
 // Запускаем сервер и проверку
 server.listen(PORT, () => {
   console.log(`🔍 Начинаю проверку ссылок в собранном сайте...`);
@@ -204,6 +223,15 @@ server.listen(PORT, () => {
 
   // Даем серверу немного времени на запуск
   setTimeout(() => {
-    siteChecker.enqueue(`${BASE_URL}/`);
+    // Находим все HTML файлы в директории build
+    const htmlFiles = findHtmlFiles(canonicalBuildDir);
+    console.log(`📄 Найдено HTML файлов: ${htmlFiles.length}\n`);
+
+    // Добавляем все HTML файлы в очередь для проверки
+    for (const filePath of htmlFiles) {
+      // Преобразуем путь файла в URL
+      const url = filePath === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${filePath}`;
+      siteChecker.enqueue(url);
+    }
   }, 500);
 });

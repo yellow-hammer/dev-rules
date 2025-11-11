@@ -32,4 +32,3 @@ Kafka подходит для:
 ## Дополнительные ресурсы
 
 - [Официальная документация Apache Kafka](https://kafka.apache.org/documentation/)
-- [Kafka vs RabbitMQ: сравнение брокеров сообщений](https://www.cloudamqp.com/blog/kafka-vs-rabbitmq-compared.html)
