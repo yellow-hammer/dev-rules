@@ -119,7 +119,9 @@
     "FID",
     "роутинга",
     "myblog",
-    "мейнтейнерами"
+    "мейнтейнерами",
+    "XDTO",
+    "Habr"
   ],
   "ignorePaths": [
     "node_modules/**",
