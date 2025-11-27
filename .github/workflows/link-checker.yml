@@ -21,7 +21,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2.7.0
         with:
-          args: --verbose --no-progress --exclude '.*myblog-1c\.ru.*' './**/*.md' './**/*.mdx'
+          args: --verbose --no-progress --exclude '.*myblog-1c\.ru.*' --exclude '.*bit-erp\.ru/adapter.*' './**/*.md' './**/*.mdx'
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
