@@ -62,6 +62,19 @@
 - [Набор практик и стандартов для качественной разработки в 1С](https://github.com/Razdolie/dev-rules)
 - [Желтый клуб](https://t.me/yellowclub_official)
 
+## Лицензия
+
+Creative Commons Attribution-ShareAlike 4.0 International License. Подробности см. в файле [LICENSE](LICENSE).
+
+## Автор
+
+Ivan Karlo (<i.karlo@outlook.com>)
+
+При желании, отблагодарить автора можно по ссылке:
+
+- [Boosty](https://boosty.to/1carlo/donate)
+- [Сбор в Т-банк](https://www.tbank.ru/cf/4kILVyrLKwq)
+
 ---
 
 Наполнение страниц в процессе. Следите за обновлениями.
