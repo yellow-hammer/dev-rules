@@ -121,7 +121,9 @@
     "myblog",
     "мейнтейнерами",
     "XDTO",
-    "Habr"
+    "Habr",
+    "Karlo",
+    "Ivan"
   ],
   "ignorePaths": [
     "node_modules/**",
