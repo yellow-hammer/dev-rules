@@ -130,7 +130,7 @@ async function checkLinks() {
     const result = await checker.check({
       path: BASE_URL,
       recurse: true,
-      concurrency: 5,
+      concurrency: 2, // Уменьшено для снижения вероятности rate limiting от GitHub
       timeout: 30000,
       linksToSkip: [
         // Исключаем домен, который уже исключен в lychee
@@ -143,6 +143,7 @@ async function checkLinks() {
     });
 
     // Фильтруем только внешние битые ссылки
+    // Код 429 (Too Many Requests) не считаем битой ссылкой — это rate limiting
     const brokenLinks = result.links.filter((link) => {
       const isExternal =
         !link.url.startsWith(BASE_URL) &&
@@ -150,8 +151,20 @@ async function checkLinks() {
         !link.url.includes('127.0.0.1') &&
         (link.url.startsWith('http://') || link.url.startsWith('https://'));
 
-      return link.state === 'BROKEN' && isExternal;
+      // Игнорируем 429 (rate limiting) — это не битая ссылка
+      const isRateLimited = link.status === 429;
+
+      return link.state === 'BROKEN' && isExternal && !isRateLimited;
     });
+
+    // Отдельно выводим ссылки с rate limiting для информации
+    const rateLimitedLinks = result.links.filter(
+      (link) => link.status === 429 && link.state === 'BROKEN'
+    );
+    if (rateLimitedLinks.length > 0) {
+      console.log(`\n⚠️  Rate limited ссылок (код 429): ${rateLimitedLinks.length}`);
+      console.log(`   Эти ссылки не считаются битыми — GitHub ограничил количество запросов.`);
+    }
 
     console.log(`\n📊 Результаты проверки ссылок:`);
     console.log(`   Всего внешних ссылок: ${totalLinks}`);
