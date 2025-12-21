@@ -1,4 +1,4 @@
-const blc = require('broken-link-checker');
+const { LinkChecker } = require('linkinator');
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -92,146 +92,101 @@ const server = http.createServer((req, res) => {
   });
 });
 
-// Настройки для broken-link-checker
-const options = {
-  filterLevel: 3, // Проверять все ссылки
-  honorRobotsTxt: true,
-  maxSockets: 1,
-  maxSocketsPerHost: 1,
-  requestMethod: 'GET',
-  userAgent: 'Mozilla/5.0 (compatible; BrokenLinkChecker/0.7.8)',
-  excludedKeywords: [
-    'myblog-1c.ru', // Исключаем домен, который уже исключен в lychee
-  ],
-  excludedSchemes: ['mailto:', 'tel:', 'javascript:'],
-};
+// Запускаем проверку ссылок
+async function checkLinks() {
+  console.log(`🔍 Начинаю проверку ссылок в собранном сайте...`);
+  console.log(`   Директория сборки: ${buildDir}`);
+  console.log(`   Локальный сервер: ${BASE_URL}\n`);
 
-let brokenLinks = [];
-let totalLinks = 0;
-let checkedLinks = 0;
-let skippedLinks = 0;
+  const checker = new LinkChecker();
 
-const siteChecker = new blc.SiteChecker(options, {
-  link: (result) => {
-    const originalUrl = result.url.original || '';
-    const resolvedUrl = result.url.resolved || '';
+  // Счётчики для статистики
+  let totalLinks = 0;
+  let checkedLinks = 0;
+  let skippedLinks = 0;
 
-    // Пропускаем локальные ссылки:
-    // - относительные пути (начинаются с /)
-    // - ссылки на localhost
-    // - ссылки на 127.0.0.1
-    // - ссылки на текущий локальный сервер
+  // Отслеживаем прогресс
+  checker.on('link', (result) => {
+    // Пропускаем локальные ссылки в статистике внешних
     const isLocal =
-      originalUrl.startsWith('/') ||
-      originalUrl.startsWith(BASE_URL) ||
-      resolvedUrl.includes('localhost') ||
-      resolvedUrl.includes('127.0.0.1') ||
-      resolvedUrl.startsWith(BASE_URL);
+      result.url.startsWith(BASE_URL) ||
+      result.url.includes('localhost') ||
+      result.url.includes('127.0.0.1');
 
     if (isLocal) {
       skippedLinks++;
       return;
     }
 
-    // Проверяем только внешние ссылки (http/https, но не localhost)
-    const isExternal =
-      (originalUrl.startsWith('http://') || originalUrl.startsWith('https://')) &&
-      !originalUrl.includes('localhost') &&
-      !originalUrl.includes('127.0.0.1');
-
-    if (!isExternal) {
-      skippedLinks++;
-      return;
-    }
-
     totalLinks++;
-    if (result.broken) {
-      brokenLinks.push({
-        url: result.url.resolved,
-        statusCode: result.http?.statusCode,
-        brokenReason: result.brokenReason,
-      });
-      console.error(
-        `❌ Битая ссылка: ${result.url.resolved} (${result.http?.statusCode || result.brokenReason})`
-      );
-    } else if (result.http?.statusCode) {
+
+    if (result.state === 'OK') {
       checkedLinks++;
-      if (result.http.statusCode >= 200 && result.http.statusCode < 300) {
-        console.log(`✓ ${result.url.resolved} (${result.http.statusCode})`);
-      }
+      console.log(`✓ ${result.url} (${result.status})`);
     }
-  },
-  page: (error, pageUrl) => {
-    if (error) {
-      console.error(`❌ Ошибка при проверке страницы ${pageUrl}:`, error.message);
-    }
-  },
-  site: (error) => {
-    server.close();
+  });
 
-    if (error) {
-      console.error(`❌ Ошибка при проверке сайта:`, error.message);
-      process.exit(1);
-    } else {
-      console.log(`\n📊 Результаты проверки ссылок:`);
-      console.log(`   Всего внешних ссылок: ${totalLinks}`);
-      console.log(`   Проверено: ${checkedLinks}`);
-      console.log(`   Пропущено (локальные): ${skippedLinks}`);
-      console.log(`   Битых ссылок: ${brokenLinks.length}`);
+  try {
+    const result = await checker.check({
+      path: BASE_URL,
+      recurse: true,
+      concurrency: 5,
+      timeout: 30000,
+      linksToSkip: [
+        // Исключаем домен, который уже исключен в lychee
+        /myblog-1c\.ru/,
+        // Исключаем mailto, tel и javascript ссылки
+        /^mailto:/,
+        /^tel:/,
+        /^javascript:/,
+      ],
+    });
 
-      if (brokenLinks.length > 0) {
-        console.log(`\n❌ Найдены битые ссылки:\n`);
-        for (const link of brokenLinks) {
-          console.log(`   - ${link.url}`);
-          console.log(`     Статус: ${link.statusCode || link.brokenReason}\n`);
+    // Фильтруем только внешние битые ссылки
+    const brokenLinks = result.links.filter((link) => {
+      const isExternal =
+        !link.url.startsWith(BASE_URL) &&
+        !link.url.includes('localhost') &&
+        !link.url.includes('127.0.0.1') &&
+        (link.url.startsWith('http://') || link.url.startsWith('https://'));
+
+      return link.state === 'BROKEN' && isExternal;
+    });
+
+    console.log(`\n📊 Результаты проверки ссылок:`);
+    console.log(`   Всего внешних ссылок: ${totalLinks}`);
+    console.log(`   Проверено: ${checkedLinks}`);
+    console.log(`   Пропущено (локальные): ${skippedLinks}`);
+    console.log(`   Битых ссылок: ${brokenLinks.length}`);
+
+    if (brokenLinks.length > 0) {
+      console.log(`\n❌ Найдены битые ссылки:\n`);
+      for (const link of brokenLinks) {
+        console.log(`   - ${link.url}`);
+        console.log(`     Статус: ${link.status || link.failureDetails?.message || 'Unknown'}`);
+        if (link.parent) {
+          console.log(`     На странице: ${link.parent}\n`);
+        } else {
+          console.log('');
         }
-        process.exit(1);
-      } else {
-        console.log(`\n✅ Все внешние ссылки работают корректно!`);
-        process.exit(0);
       }
+      return 1;
+    } else {
+      console.log(`\n✅ Все внешние ссылки работают корректно!`);
+      return 0;
     }
-  },
-});
-
-// Функция для рекурсивного поиска всех HTML файлов
-function findHtmlFiles(dir, fileList = []) {
-  const files = fs.readdirSync(dir);
-
-  for (const file of files) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
-
-    if (stat.isDirectory()) {
-      findHtmlFiles(filePath, fileList);
-    } else if (file.endsWith('.html')) {
-      const relativePath = path.relative(canonicalBuildDir, filePath);
-      // Преобразуем путь в URL (заменяем обратные слэши на прямые для Windows)
-      const urlPath = relativePath.replaceAll('\\', '/');
-      fileList.push(urlPath);
-    }
+  } catch (error) {
+    console.error(`❌ Ошибка при проверке ссылок:`, error.message);
+    return 1;
   }
-
-  return fileList;
 }
 
 // Запускаем сервер и проверку
-server.listen(PORT, () => {
-  console.log(`🔍 Начинаю проверку ссылок в собранном сайте...`);
-  console.log(`   Директория сборки: ${buildDir}`);
-  console.log(`   Локальный сервер: ${BASE_URL}\n`);
-
+server.listen(PORT, async () => {
   // Даем серверу немного времени на запуск
-  setTimeout(() => {
-    // Находим все HTML файлы в директории build
-    const htmlFiles = findHtmlFiles(canonicalBuildDir);
-    console.log(`📄 Найдено HTML файлов: ${htmlFiles.length}\n`);
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
-    // Добавляем все HTML файлы в очередь для проверки
-    for (const filePath of htmlFiles) {
-      // Преобразуем путь файла в URL
-      const url = filePath === 'index.html' ? `${BASE_URL}/` : `${BASE_URL}/${filePath}`;
-      siteChecker.enqueue(url);
-    }
-  }, 500);
+  const exitCode = await checkLinks();
+  server.close();
+  process.exit(exitCode);
 });
