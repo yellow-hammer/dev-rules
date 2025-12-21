@@ -12,6 +12,6 @@ sidebar_position: 16
 ## Содержание
 
 - [Code-review](code-review/README.md)
-- [Пайплайны](pipelines/README.md)
+- [Конвейеры](pipelines/README.md)
 - [Тестирование](testing/README.md)
 - [SonarQube](sonar/README.md)

@@ -126,7 +126,7 @@ rm -rf .git/modules/src/cfe/infostart-print-wizard
 # 3. Удалить папку
 rm -rf src/cfe/infostart-print-wizard
 
-# 4. Закоммитить
+# 4. Зафиксировать изменения
 git commit -m "chore: Удален submodule infostart-print-wizard"
 ```
 

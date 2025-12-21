@@ -103,7 +103,7 @@ git check-ignore -v path/to/file
 git rm --cached <файл>
 git rm --cached -r <папка>
 
-# Закоммитить
+# Зафиксировать изменения
 git commit -m "chore: Удалены файлы из отслеживания"
 ```
 

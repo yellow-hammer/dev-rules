@@ -32,7 +32,7 @@ git config --global core.safecrlf false
 # Буфер для больших репозиториев
 git config --global http.postBuffer 1048576000
 
-# Алиасы (сокращения команд)
+# Псевдонимы (сокращения команд)
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
@@ -65,7 +65,7 @@ git config --system core.longpaths true
 | `git add .`                  | Добавить все изменения    |
 | `git add <файл>`             | Добавить конкретный файл  |
 | `git commit -m "сообщение"`  | Создать коммит            |
-| `git commit -am "сообщение"` | Добавить и закоммитить    |
+| `git commit -am "сообщение"` | Добавить и зафиксировать  |
 | `git push`                   | Отправить изменения       |
 | `git pull`                   | Получить изменения        |
 | `git fetch`                  | Получить без слияния      |
@@ -222,11 +222,11 @@ git clean -fX   # Удалить игнорируемые файлы
 
 ---
 
-### Алиасы (сокращения)
+### Псевдонимы (сокращения)
 
 После [первоначальной настройки](#первоначальная-настройка) доступны:
 
-| Алиас                | Команда                    |
+| Псевдоним            | Команда                    |
 | -------------------- | -------------------------- |
 | `git st`             | `git status`               |
 | `git co`             | `git checkout`             |
@@ -246,14 +246,14 @@ git pull
 # 2. Создать ветку для задачи
 git checkout -b feature/новая-функция
 
-# 3. Внести изменения и закоммитить
+# 3. Внести изменения и зафиксировать
 git add .
 git commit -m "feat: Добавлена новая функция"
 
 # 4. Отправить ветку
 git push -u origin feature/новая-функция
 
-# 5. После код-ревью и merge
+# 5. После проверки кода и merge
 git checkout main
 git pull
 git branch -d feature/новая-функция
