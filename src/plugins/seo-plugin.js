@@ -7,9 +7,9 @@
  */
 
 function seoPlugin(context, options) {
-  const {
-    siteConfig: { url },
-  } = context;
+
+
+
 
   return {
     name: 'seo-plugin',
