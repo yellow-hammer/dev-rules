@@ -41,10 +41,11 @@
     "@cspell/dict-ru_ru": "^2.3.2",
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
-    "linkinator": "^7.5.3",
+    "baseline-browser-mapping": "^2.9.11",
     "cspell": "^9.4.0",
     "glob": "^13.0.0",
     "husky": "^9.1.7",
+    "linkinator": "^7.5.3",
     "lint-staged": "^16.2.7",
     "markdownlint-cli": "^0.47.0",
     "prettier": "^3.7.4"
