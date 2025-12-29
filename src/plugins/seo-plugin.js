@@ -8,7 +8,7 @@
 
 function seoPlugin(context, options) {
   const {
-    siteConfig: { url, baseUrl },
+    siteConfig: { url },
   } = context;
 
   return {
