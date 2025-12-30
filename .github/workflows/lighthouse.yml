@@ -1,6 +1,8 @@
 name: Lighthouse CI
+
 permissions:
   contents: read
+
 on:
   pull_request:
     paths:

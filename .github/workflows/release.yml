@@ -1,0 +1,83 @@
+name: Release
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Версия релиза в формате semver (например, v0.3.0)'
+        required: true
+        type: string
+
+jobs:
+  release:
+    name: Создание релиза ${{ inputs.version }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install git-cliff
+        uses: orhun/git-cliff-action@v2
+        with:
+          config: cliff.toml
+
+      - name: Validate version format
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [[ ! "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "❌ Ошибка: версия должна быть в формате semver с префиксом v (например, v0.3.0)"
+            exit 1
+          fi
+          echo "✅ Версия $VERSION валидна"
+
+      - name: Extract version without prefix
+        id: version
+        run: |
+          VERSION="${{ inputs.version }}"
+          VERSION_WITHOUT_V="${VERSION#v}"
+          echo "version_without_v=$VERSION_WITHOUT_V" >> $GITHUB_OUTPUT
+          echo "version_with_v=$VERSION" >> $GITHUB_OUTPUT
+          echo "✅ Извлечена версия: $VERSION_WITHOUT_V (без префикса), $VERSION (с префиксом)"
+
+      - name: Update version in package.json
+        run: |
+          npm version "${{ steps.version.outputs.version_without_v }}" --no-git-tag-version
+          echo "✅ Версия обновлена в package.json до ${{ steps.version.outputs.version_without_v }}"
+
+      - name: Generate CHANGELOG
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git-cliff --tag "${{ steps.version.outputs.version_without_v }}" --output CHANGELOG.md
+          echo "✅ CHANGELOG сгенерирован"
+
+      - name: Commit changes
+        run: |
+          git add package.json package-lock.json CHANGELOG.md
+          git commit -m "chore(release): version ${{ steps.version.outputs.version_with_v }}"
+          echo "✅ Изменения закоммичены"
+
+      - name: Create tag
+        run: |
+          git tag -a "${{ steps.version.outputs.version_with_v }}" -m "Релиз ${{ steps.version.outputs.version_with_v }}"
+          echo "✅ Тег ${{ steps.version.outputs.version_with_v }} создан"
+
+      - name: Push changes and tag
+        run: |
+          git push origin main
+          git push origin "${{ steps.version.outputs.version_with_v }}"
+          echo "✅ Изменения и тег отправлены в репозиторий"
