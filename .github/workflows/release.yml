@@ -77,8 +77,8 @@ jobs:
 
       - name: Update version in package.json
         run: |
-          npm version "${{ steps.version.outputs.version_without_v }}" --no-git-tag-version
-          echo "✅ Версия обновлена в package.json до ${{ steps.version.outputs.version_without_v }}"
+          npm version "${{ steps.version.outputs.version_without_v }}" --no-git-tag-version || echo "⚠️ Версия уже установлена в package.json"
+          echo "✅ Версия в package.json: ${{ steps.version.outputs.version_without_v }}"
 
       - name: Generate CHANGELOG
         run: |
@@ -86,6 +86,39 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git-cliff --config cliff.toml --tag "${{ steps.version.outputs.version_without_v }}" --output CHANGELOG.md
           echo "✅ CHANGELOG сгенерирован"
+
+      - name: Extract release notes
+        id: release_notes
+        run: |
+          if [ -f CHANGELOG.md ]; then
+            # Извлекаем только последний релиз (первый ## [version] в файле после заголовка)
+            RELEASE_NOTES=$(awk '
+              /^## \[/ {
+                if (found) exit
+                found = 1
+              }
+              found { print }
+            ' CHANGELOG.md)
+            
+            # Удаляем пустые строки в конце
+            RELEASE_NOTES=$(echo "$RELEASE_NOTES" | sed -e :a -e '/^\n*$/{$d;N;ba' -e '}')
+            
+            # Если changelog пустой или слишком короткий, используем fallback
+            if [ -z "$RELEASE_NOTES" ] || [ ${#RELEASE_NOTES} -lt 20 ]; then
+              echo "Changelog is empty or too short, using fallback"
+              RELEASE_NOTES="## Изменения"$'\n\n'"См. [историю коммитов](https://github.com/${{ github.repository }}/commits/${{ steps.version.outputs.version_with_v }})"
+            fi
+          else
+            echo "CHANGELOG.md not found, using fallback"
+            RELEASE_NOTES="## Изменения"$'\n\n'"См. [историю коммитов](https://github.com/${{ github.repository }}/commits/${{ steps.version.outputs.version_with_v }})"
+          fi
+          
+          # Многострочный вывод в GitHub Actions
+          {
+            echo 'release_notes<<EOF'
+            echo "$RELEASE_NOTES"
+            echo EOF
+          } >> $GITHUB_OUTPUT
 
       - name: Commit changes
         run: |
@@ -95,7 +128,7 @@ jobs:
 
       - name: Create tag
         run: |
-          git tag -a "${{ steps.version.outputs.version_with_v }}" -m "Релиз ${{ steps.version.outputs.version_with_v }}"
+          git tag -a "${{ steps.version.outputs.version_with_v }}" -m "${{ steps.version.outputs.version_with_v }}"
           echo "✅ Тег ${{ steps.version.outputs.version_with_v }} создан"
 
       - name: Push changes and tag
@@ -103,3 +136,15 @@ jobs:
           git push origin main
           git push origin "${{ steps.version.outputs.version_with_v }}"
           echo "✅ Изменения и тег отправлены в репозиторий"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.version_with_v }}
+          name: ${{ steps.version.outputs.version_with_v }}
+          body: |
+            ## Версия ${{ steps.version.outputs.version_without_v }}
+            
+            ${{ steps.release_notes.outputs.release_notes }}
+          draft: false
+          prerelease: false

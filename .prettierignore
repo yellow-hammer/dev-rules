@@ -16,3 +16,6 @@ CHANGELOG.md
 *.min.js
 *.bundle.js
 
+# GitHub Actions workflows (содержат сложные многострочные блоки)
+.github/workflows/*.yml
+.github/workflows/*.yaml
