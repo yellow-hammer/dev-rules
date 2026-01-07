@@ -138,7 +138,7 @@ jobs:
           echo "✅ Изменения и тег отправлены в репозиторий"
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.version.outputs.version_with_v }}
           name: ${{ steps.version.outputs.version_with_v }}
