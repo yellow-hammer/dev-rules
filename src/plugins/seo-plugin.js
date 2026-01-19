@@ -7,7 +7,6 @@
  */
 
 function seoPlugin(context, options) {
-
   return {
     name: 'seo-plugin',
     contentLoaded({ content, actions }) {
