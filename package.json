@@ -42,13 +42,13 @@
     "@docusaurus/module-type-aliases": "^3.1.1",
     "@docusaurus/types": "^3.1.1",
     "baseline-browser-mapping": "^2.9.15",
-    "cspell": "^9.6.0",
+    "cspell": "^9.6.1",
     "glob": "^13.0.0",
     "husky": "^9.1.7",
     "linkinator": "^7.5.3",
     "lint-staged": "^16.2.7",
     "markdownlint-cli": "^0.47.0",
-    "prettier": "^3.8.0"
+    "prettier": "^3.8.1"
   },
   "lint-staged": {
     "*.{md,mdx}": [
