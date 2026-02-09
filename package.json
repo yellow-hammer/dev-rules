@@ -86,6 +86,7 @@
     "node": ">=20.0"
   },
   "overrides": {
+    "lodash-es": "4.17.23",
     "tmp": ">=0.2.4",
     "tough-cookie": ">=4.1.3"
   },
