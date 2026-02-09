@@ -67,7 +67,7 @@ VS Code имеет встроенную поддержку Git. Ниже пре�
 
 | Расширение                                                                                                     | Описание                                                      |
 | :------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------ |
-| [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=devantler.git-extension-pack-new)     | Коллекция расширений для Git                                  |
+| [Git Extension Pack](https://marketplace.visualstudio.com/items?itemName=donjayamanne.git-extension-pack)      | Коллекция расширений для Git                                  |
 | [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)                                 | Ускорьте Git и откройте неиспользованные знания в репозитории |
 | [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)                            | Просматривайте Git Graph вашего репозитория                   |
 | [Commit Message Editor](https://marketplace.visualstudio.com/items?itemName=adam-bender.commit-message-editor) | Редактируйте сообщения коммитов удобным способом              |
