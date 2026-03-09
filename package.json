@@ -46,8 +46,8 @@
     "glob": "^13.0.6",
     "husky": "^9.1.7",
     "linkinator": "^7.6.1",
-    "lint-staged": "^16.3.1",
-    "markdownlint-cli": "^0.47.0",
+    "lint-staged": "^16.3.2",
+    "markdownlint-cli": "^0.48.0",
     "prettier": "^3.8.1"
   },
   "lint-staged": {
