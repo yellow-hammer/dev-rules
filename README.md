@@ -11,7 +11,7 @@
 [![Lighthouse](https://github.com/yellow-hammer/dev-rules/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/lighthouse.yml)
 [![Dependabot](https://github.com/yellow-hammer/dev-rules/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/dependabot/dependabot-updates)
 [![telegram chat](https://img.shields.io/badge/telegram-chat-green.svg)](https://t.me/wonder_yellow)
-[![Ask Devin](https://deepwiki.com/badge.svg)](https://app.devin.ai/org/yellow-hammer/wiki/yellow-hammer/dev-rules)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/yellow-hammer/dev-rules)
 
 [yellow-hammer.github.io/dev-rules](https://yellow-hammer.github.io/dev-rules/)
 
