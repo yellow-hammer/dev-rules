@@ -25,9 +25,9 @@
     "check:links": "node scripts/check-links.js"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.9.2",
-    "@docusaurus/preset-classic": "^3.9.2",
-    "@docusaurus/theme-mermaid": "^3.9.2",
+    "@docusaurus/core": "^3.10.0",
+    "@docusaurus/preset-classic": "^3.10.0",
+    "@docusaurus/theme-mermaid": "^3.10.0",
     "@docusaurus/theme-search-algolia": "^3.9.1",
     "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.1.1",
