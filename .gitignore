@@ -26,3 +26,7 @@ yarn-error.log*
 lighthouse-reports/
 lighthouse-report*.html
 lighthouse-report*.json
+
+# Cursor
+.cursor/plans/
+.cursor/projects/
