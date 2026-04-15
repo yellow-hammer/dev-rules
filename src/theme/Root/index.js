@@ -14,13 +14,15 @@ export default function Root({ children }) {
 
   useEffect(() => {
     // Формируем полный URL текущей страницы
-    const path = location.pathname.replace(/\/$/, '') || '/';
+    const currentPath = location.pathname.replace(/\/$/, '') || '/';
     const baseUrlClean = baseUrl.replace(/\/$/, '');
-    const pathClean = path === '/' ? '' : path;
-    const fullUrl = `${url}${baseUrlClean}${pathClean}`.replace(/\/+/g, '/');
+    const pathWithLeadingSlash = location.pathname.startsWith('/')
+      ? location.pathname
+      : `/${location.pathname}`;
+    const fullUrl = new URL(pathWithLeadingSlash, `${url}${baseUrl}`).toString();
 
     // Определяем, является ли это главной страницей
-    const isHomePage = path === '/' || path === baseUrlClean || path === '';
+    const isHomePage = currentPath === '/' || currentPath === baseUrlClean || currentPath === '';
 
     // Получаем метаданные страницы
     const pageTitle = document.title || siteConfig.title;

@@ -1,15 +1,7 @@
 # Гид по внутренним процессам и стандартам разработки
 
-[![Stars](https://img.shields.io/github/stars/yellow-hammer/dev-rules.svg?label=Github%20%E2%98%85&a)](https://github.com/yellow-hammer/dev-rules/stargazers)
-[![Release](https://img.shields.io/github/v/release/yellow-hammer/dev-rules?include_prereleases&label=last%20release&style=badge)](https://github.com/yellow-hammer/dev-rules/releases/latest)
 [![OpenYellow](https://img.shields.io/endpoint?url=https://openyellow.org/data/badges/6/937499493.json)](https://openyellow.org/grid?data=top&repo=937499493)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Deploy to GitHub Pages](https://github.com/yellow-hammer/dev-rules/actions/workflows/deploy.yml/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/deploy.yml)
-[![CodeQL](https://github.com/yellow-hammer/dev-rules/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/github-code-scanning/codeql)
-[![Орфография](https://github.com/yellow-hammer/dev-rules/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/spellcheck.yml)
-[![Link Checker](https://github.com/yellow-hammer/dev-rules/actions/workflows/link-checker.yml/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/link-checker.yml)
-[![Lighthouse](https://github.com/yellow-hammer/dev-rules/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/lighthouse.yml)
-[![Dependabot](https://github.com/yellow-hammer/dev-rules/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/yellow-hammer/dev-rules/actions/workflows/dependabot/dependabot-updates)
 [![telegram chat](https://img.shields.io/badge/telegram-chat-green.svg)](https://t.me/wonder_yellow)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/yellow-hammer/dev-rules)
 
@@ -61,7 +53,7 @@
 Благодаря этим материалам наш регламент появился на свет:
 
 - [Несколько документов около разработки 1С.](https://github.com/arkuznetsov/some1cdocs)
-- [Набор практик и стандартов для качественной разработки в 1С](https://github.com/Razdolie/dev-rules)
+- [Набор практик и стандартов для качественной разработки в 1С](https://github.com/ones-devguide/dev-rules)
 - [Желтый клуб](https://t.me/yellowclub_official)
 
 ## Лицензия

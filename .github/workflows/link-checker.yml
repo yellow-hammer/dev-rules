@@ -22,7 +22,7 @@ jobs:
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2.8.0
         with:
-          args: --verbose --no-progress --exclude '.*myblog-1c\.ru.*' --exclude '.*bit-erp\.ru/adapter.*' './**/*.md' './**/*.mdx'
+          args: --verbose --no-progress --root-dir . --exclude '.*myblog-1c\.ru.*' --exclude '.*bit-erp\.ru/adapter.*' --exclude '^/files/vscode/.*\.pptx$' 'docs/**/*.md' 'README.md'
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

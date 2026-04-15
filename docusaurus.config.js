@@ -225,10 +225,6 @@ const config = {
         hideable: true,
       },
     },
-    feedback: {
-      content: 'Нашли ошибку? Создайте issue!',
-      feedbackLink: 'https://github.com/yellow-hammer/dev-rules/issues/new',
-    },
   },
 
   plugins: [

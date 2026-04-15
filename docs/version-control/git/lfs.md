@@ -31,7 +31,7 @@ title: Git LFS для больших файлов
 
 **Windows:**
 
-Скачать с [git-lfs.github.com](https://git-lfs.github.com/) или использовать встроенный в Git for Windows.
+Скачать с [git-lfs.com](https://git-lfs.com/) или использовать встроенный в Git for Windows.
 
 Проверка:
 

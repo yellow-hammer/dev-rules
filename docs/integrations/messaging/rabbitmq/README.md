@@ -33,5 +33,5 @@ RabbitMQ основан на трех ключевых понятиях:
 
 ## Дополнительные ресурсы
 
-- [Официальная документация RabbitMQ](https://www.rabbitmq.com/documentation.html)
+- [Официальная документация RabbitMQ](https://www.rabbitmq.com/docs)
 - Подробные статьи и примеры: [Основные концепции](concepts.md#дополнительные-ресурсы)

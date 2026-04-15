@@ -1,6 +1,7 @@
 const fs = require('fs');
 const glob = require('glob');
 const prettier = require('prettier');
+const path = require('node:path');
 
 // Конфигурация
 const CONFIG = {
@@ -68,7 +69,7 @@ const getPages = () => {
 
   return files
     .map((file) => {
-      const relativePath = file.replace('build/', '');
+      const relativePath = path.relative('build', file).replace(/\\/g, '/');
       const normalizedPath = normalizePath(relativePath);
       const stats = fs.statSync(file);
 
