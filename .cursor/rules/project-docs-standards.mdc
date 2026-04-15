@@ -1,3 +1,8 @@
+---
+description: Базовые правила для документации Dev Rules
+alwaysApply: true
+---
+
 # Правила для проекта Dev Rules
 
 ## Общие ориентиры
@@ -5,6 +10,7 @@
 - Проект — документация на Docusaurus 3.x для стандартов разработки 1С, основной язык русский.
 - Пишите изменения и комментарии на русском, избегайте англицизмов без необходимости.
 - Предпочитайте точечные правки и сохранение существующей структуры документов.
+- Для коммитов с документацией используйте тип `docs` (Conventional Commits).
 
 ## Где что находится
 
@@ -14,8 +20,7 @@
 
 ## Правила для документов
 
-- Для новых страниц Docusaurus добавляйте frontmatter с `sidebar_position`, `slug`,
-  `description`, `keywords` (title опционален).
+- Для новых страниц Docusaurus добавляйте frontmatter с `sidebar_position`, `slug`, `description`, `keywords` (title опционален).
 - Используйте MDX, где нужны компоненты; остальное — обычный Markdown.
 - Картинки размещайте рядом в `img/` и подключайте относительными путями.
 - Примеры кода помечайте языком: `bsl`.
@@ -24,16 +29,14 @@
 
 ## Форматирование и проверки
 
-- Следуйте Prettier и markdownlint из репозитория.
-- Перед коммитом полезны `npm run format:check`, `npm run lint:md`, `npm run spellcheck`.
+- Следуйте конфигурациям Prettier, markdownlint и проверки орфографии из репозитория; не придумывайте локальные правила.
+- Перед сдачей изменений выполняйте `npm run format:check`, `npm run lint:md`, `npm run spellcheck`, `npm run build`.
 
 ## Ограничения и игнорируемое
 
-- Не редактируйте/не добавляйте: `node_modules/`, `build/`, `.docusaurus/`,
-  `lighthouse-reports/`, `.cspell/cache/`, `package-lock.json`.
+- Не редактируйте и не добавляйте: `node_modules/`, `build/`, `.docusaurus/`, `lighthouse-reports/`, `.cspell/cache/`, `package-lock.json`.
+- Не добавляйте контент в `blog/`, пока блог отключен в `docusaurus.config.js`.
 
 ## Коммиты
 
-- Conventional Commits на русском; изменения в документации — `docs`,
-  прочее — `chore(<scope>)`, `style`, `refactor`, `test` и т.п.
-
+- Conventional Commits на русском; изменения в документации — `docs`, прочее — `chore(<scope>)`, `style`, `refactor`, `test` и т.п.
