@@ -8,13 +8,14 @@ updates:
       day: 'monday'
       time: '09:00'
     open-pull-requests-limit: 10
-    labels:
-      - 'dependencies'
-      - 'npm'
     commit-message:
       prefix: 'chore'
       prefix-development: 'chore'
       include: 'scope'
+    ignore:
+      - dependency-name: 'cspell'
+        update-types:
+          - 'version-update:semver-major'
     groups:
       docusaurus:
         patterns:
@@ -41,9 +42,6 @@ updates:
       interval: 'weekly'
       day: 'monday'
       time: '09:00'
-    labels:
-      - 'dependencies'
-      - 'github-actions'
     commit-message:
       prefix: 'ci'
       include: 'scope'
