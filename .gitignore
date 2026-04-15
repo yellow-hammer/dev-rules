@@ -27,6 +27,8 @@ lighthouse-reports/
 lighthouse-report*.html
 lighthouse-report*.json
 
-# Cursor
+# IDE
+.idea/
 .cursor/plans/
 .cursor/projects/
+*.code-workspace
