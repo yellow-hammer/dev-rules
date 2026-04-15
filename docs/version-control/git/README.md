@@ -42,6 +42,7 @@ title: Работа с Git
 - [Настройка SSH](ssh.md) — аутентификация без пароля
 - [Git Flow](gitflow.md) — методология ветвления
 - [.gitignore](gitignore.md) — настройка игнорирования файлов
+- [.gitattributes](gitattributes.md) — правила EOL, типов файлов и LFS
 - [Git LFS](lfs.md) — работа с большими файлами
 - [Submodules](submodules.md) — подключение внешних репозиториев
 - [Работа в IDE](../../ide/README.md) — Git в 1С:EDT и VS Code
