@@ -121,23 +121,33 @@ jobs:
           } >> $GITHUB_OUTPUT
 
       - name: Commit changes
+        id: changes
         run: |
           git add package.json package-lock.json CHANGELOG.md
-          git commit -m "chore(release): version ${{ steps.version.outputs.version_with_v }}"
-          echo "✅ Изменения закоммичены"
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ Изменений для коммита нет. Шаги tag/push/release будут пропущены."
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git commit -m "chore(release): version ${{ steps.version.outputs.version_with_v }}"
+            echo "✅ Изменения закоммичены"
+          fi
 
       - name: Create tag
+        if: steps.changes.outputs.has_changes == 'true'
         run: |
           git tag -a "${{ steps.version.outputs.version_with_v }}" -m "${{ steps.version.outputs.version_with_v }}"
           echo "✅ Тег ${{ steps.version.outputs.version_with_v }} создан"
 
       - name: Push changes and tag
+        if: steps.changes.outputs.has_changes == 'true'
         run: |
           git push origin main
           git push origin "${{ steps.version.outputs.version_with_v }}"
           echo "✅ Изменения и тег отправлены в репозиторий"
 
       - name: Create GitHub Release
+        if: steps.changes.outputs.has_changes == 'true'
         uses: softprops/action-gh-release@v3
         with:
           tag_name: ${{ steps.version.outputs.version_with_v }}
@@ -148,3 +158,8 @@ jobs:
             ${{ steps.release_notes.outputs.release_notes }}
           draft: false
           prerelease: false
+
+      - name: Skip release when no changes
+        if: steps.changes.outputs.has_changes != 'true'
+        run: |
+          echo "ℹ️ Релиз пропущен: после обновления версии/CHANGELOG нет изменений для фиксации."
