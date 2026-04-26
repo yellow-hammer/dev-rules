@@ -54,6 +54,8 @@
 
 - [Несколько документов около разработки 1С.](https://github.com/arkuznetsov/some1cdocs)
 - [Набор практик и стандартов для качественной разработки в 1С](https://github.com/ones-devguide/dev-rules)
+- [Guide для создания форм на 1С](https://github.com/Oxotka/1CDesignGuide)
+- [Соглашения по стилю кода 1С](https://github.com/kuzyara/CodeStyle1C)
 - [Желтый клуб](https://t.me/yellowclub_official)
 
 ## Лицензия
