@@ -10,12 +10,10 @@ title: Git Flow и стратегии ветвления
 
 Git-flow — расширение Git для модели ветвления Винсента Дриссена.
 
-**Ресурсы:**
+### Ресурсы
 
 - Графическая шпаргалка: [http://danielkummer.github.io/git-flow-cheatsheet/](http://danielkummer.github.io/git-flow-cheatsheet/)
 - Оригинальная статья: [https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)
-
----
 
 ### Структура веток
 
@@ -29,21 +27,21 @@ main (production)
 └── hotfix/критический-баг
 ```
 
-| Ветка       | Назначение                           |
-| ----------- | ------------------------------------ |
-| `main`      | Код, готовый к выпуску, теги релизов |
-| `develop`   | Интеграция новых функций             |
-| `feature/*` | Разработка новых функций             |
-| `release/*` | Подготовка к релизу                  |
-| `hotfix/*`  | Срочные исправления в продакшене     |
-| `bugfix/*`  | Исправление багов в develop          |
+| Ветка       | Назначение                               |
+| ----------- | ---------------------------------------- |
+| `main`      | Код, готовый к выпуску, теги релизов     |
+| `develop`   | Интеграция новых функций                 |
+| `feature/*` | Разработка новых функций                 |
+| `release/*` | Подготовка к релизу                      |
+| `hotfix/*`  | Срочные исправления в промышленной среде |
+| `bugfix/*`  | Исправление багов в develop              |
 
 ---
 
 ### Установка
 
 :::note Windows
-Для использования Git Flow в Windows установите [Gitflow-next](https://git-flow.sh/) через winget:
+Для использования Git Flow в Windows установите [Gitflow-next](https://git-flow.sh/) через `winget`:
 
 ```powershell
 winget install --id Gitflow.Gitflow-next
@@ -252,6 +250,6 @@ production
    - `hotfix/критический-баг`
    - `release/версия`
 
-2. **Коммиты:** Следуйте [Conventional Commits](https://www.conventionalcommits.org/ru/v1.0.0/)
+2. **Коммиты:** следуйте [соглашению о коммитах](../README.md#соглашение-о-коммитах).
 
 3. **Merge:** Используйте `--no-ff` для сохранения истории

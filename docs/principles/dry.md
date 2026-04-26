@@ -1,6 +1,6 @@
 ---
 id: dry
-title: DRY - Не повторяйся
+title: DRY — Не повторяйся
 sidebar_label: DRY
 sidebar_position: 2
 description: Принцип DRY (Don't Repeat Yourself)
@@ -13,7 +13,7 @@ keywords:
 slug: /principles/dry
 ---
 
-## DRY (Don't Repeat Yourself) - Не повторяйся
+## DRY (Don't Repeat Yourself) — Не повторяйся
 
 ## Описание принципа
 

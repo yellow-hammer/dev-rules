@@ -18,18 +18,16 @@ title: Git LFS для больших файлов
 - Превышению лимитов размера
 - Долгому клонированию
 
-**Что хранить в LFS:**
+### Что хранить в LFS
 
 - Артефакты конфигураций (`.cf`, `.cfe`, `.erf`, `.epf`)
 - Дампы баз данных (`.dt`)
 - Архивы (`.zip`, `.7z`)
 - Медиафайлы
 
----
-
 ### Установка
 
-**Windows:**
+#### Windows
 
 Скачать с [git-lfs.com](https://git-lfs.com/) или использовать встроенный в Git for Windows.
 
@@ -64,7 +62,7 @@ git lfs track "path/to/large-file.bin"
 git lfs track "exports/*"
 ```
 
-#### Добавление .gitattributes
+#### Добавление `.gitattributes`
 
 ```bash
 git add .gitattributes
@@ -132,11 +130,11 @@ git lfs migrate import --include="*.cf" --everything
 git lfs migrate import --above=10MB --everything
 ```
 
-⚠️ **Важно:** История будет переписана. Требуется `git push --force`.
+**Важно:** история будет переписана. Требуется `git push --force`.
 
 ---
 
-### .gitattributes для 1С
+### `.gitattributes` для 1С
 
 Рекомендуемая конфигурация:
 
