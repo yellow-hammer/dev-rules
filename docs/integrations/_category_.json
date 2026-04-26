@@ -1,4 +1,8 @@
 {
   "label": "Интеграции",
-  "position": 14
+  "position": 14,
+  "link": {
+    "type": "doc",
+    "id": "integrations"
+  }
 }

@@ -1,0 +1,8 @@
+{
+  "label": "Система управления версиями",
+  "position": 12,
+  "link": {
+    "type": "doc",
+    "id": "version-control/README"
+  }
+}
