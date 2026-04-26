@@ -14,6 +14,7 @@ canonicalBuildDir = fs.realpathSync(buildDir);
 const indexPath = path.join(canonicalBuildDir, 'index.html');
 const PORT = 3001;
 const BASE_URL = `http://localhost:${PORT}`;
+const PRODUCTION_BASE_URL = 'https://yellow-hammer.github.io/dev-rules';
 
 if (!fs.existsSync(indexPath)) {
   console.error(
@@ -110,6 +111,7 @@ async function checkLinks() {
     // Пропускаем локальные ссылки в статистике внешних
     const isLocal =
       result.url.startsWith(BASE_URL) ||
+      result.url.startsWith(PRODUCTION_BASE_URL) ||
       result.url.includes('localhost') ||
       result.url.includes('127.0.0.1');
 
@@ -135,6 +137,8 @@ async function checkLinks() {
       linksToSkip: [
         // Исключаем домен, который уже исключен в lychee
         /myblog-1c\.ru/,
+        // Telegram часто блокирует автоматические проверки и возвращает сетевые ошибки.
+        /^https:\/\/t\.me\/YellowHummer/,
         // Исключаем mailto, tel и javascript ссылки
         /^mailto:/,
         /^tel:/,
@@ -147,6 +151,7 @@ async function checkLinks() {
     const brokenLinks = result.links.filter((link) => {
       const isExternal =
         !link.url.startsWith(BASE_URL) &&
+        !link.url.startsWith(PRODUCTION_BASE_URL) &&
         !link.url.includes('localhost') &&
         !link.url.includes('127.0.0.1') &&
         (link.url.startsWith('http://') || link.url.startsWith('https://'));

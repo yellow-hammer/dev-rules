@@ -14,21 +14,22 @@
     {
       "src": "/dev-rules/img/icon.ico",
       "sizes": "32x32",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any"
     },
     {
-      "src": "/dev-rules/img/og-image.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/dev-rules/img/og-image.png",
+      "sizes": "256x256",
+      "type": "image/png",
       "purpose": "any maskable"
     }
   ],
   "categories": ["developer", "documentation", "education"],
   "screenshots": [
     {
-      "src": "/dev-rules/img/og-image.svg",
-      "sizes": "1200x630",
-      "type": "image/svg+xml",
+      "src": "/dev-rules/img/og-image.png",
+      "sizes": "256x256",
+      "type": "image/png",
       "form_factor": "wide"
     }
   ]

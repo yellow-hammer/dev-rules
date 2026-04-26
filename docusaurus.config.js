@@ -1,31 +1,278 @@
 // @ts-check
-// `@type` JSDoc annotations allow editor autocompletion and type checking
-// (when paired with `@ts-check`).
-// There are various equivalent ways to declare your Docusaurus config.
-// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const config = {
+const site = {
   title: 'Соглашение о разработке',
   tagline: 'Набор практик и стандартов для качественной разработки в 1С',
-  favicon: 'img/icon.ico',
-
-  // Set the production url of your site here
   url: 'https://yellow-hammer.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/dev-rules/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'yellow-hammer',
   projectName: 'dev-rules',
+};
+
+const siteBaseUrl = `${site.url}${site.baseUrl}`;
+const repositoryUrl = 'https://github.com/yellow-hammer/dev-rules';
+const organizationUrl = 'https://github.com/yellow-hammer';
+const telegramUrl = 'https://t.me/YellowHummer';
+
+const assets = {
+  favicon: 'img/icon.ico',
+  ogImage: 'img/og-image.png',
+  manifest: `${site.baseUrl}manifest.json`,
+  appleTouchIcon: `${site.baseUrl}img/icon.ico`,
+  browserConfig: `${site.baseUrl}browserconfig.xml`,
+};
+
+const themeColor = '#ffd700';
+const siteDescription =
+  'Набор практик и стандартов для качественной разработки в 1С. Стандарты кодирования, лучшие практики, инструменты разработки и DevOps процессы.';
+const siteKeywords =
+  '1С, разработка, стандарты, кодирование, лучшие практики, DevOps, документация, программирование';
+const ogImageAlt =
+  'Соглашение о разработке - Набор практик и стандартов для качественной разработки в 1С';
+
+const absoluteUrl = (path) => new URL(path, siteBaseUrl).toString();
+
+const metadata = [
+  { name: 'description', content: siteDescription },
+  { name: 'keywords', content: siteKeywords },
+  { name: 'author', content: 'Yellow Hammer' },
+  { name: 'robots', content: 'index, follow' },
+  { name: 'language', content: 'ru' },
+  { property: 'og:type', content: 'website' },
+  { property: 'og:site_name', content: site.title },
+  { property: 'og:locale', content: 'ru_RU' },
+  { property: 'og:url', content: siteBaseUrl },
+  { property: 'og:image', content: absoluteUrl(assets.ogImage) },
+  { property: 'og:image:width', content: '256' },
+  { property: 'og:image:height', content: '256' },
+  { property: 'og:image:type', content: 'image/png' },
+  { property: 'og:image:alt', content: ogImageAlt },
+  { name: 'twitter:card', content: 'summary_large_image' },
+  { name: 'twitter:site', content: '@YellowHummer' },
+  { name: 'twitter:creator', content: '@YellowHummer' },
+  { name: 'twitter:image', content: absoluteUrl(assets.ogImage) },
+  { name: 'twitter:image:alt', content: ogImageAlt },
+  { name: 'twitter:domain', content: 'yellow-hammer.github.io' },
+  { property: 'article:publisher', content: organizationUrl },
+  { property: 'article:author', content: 'Yellow Hammer' },
+  { property: 'article:section', content: 'Technology' },
+  { property: 'article:tag', content: '1С, разработка, стандарты' },
+  {
+    name: 'viewport',
+    content:
+      'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover',
+  },
+  { name: 'theme-color', content: themeColor },
+  { name: 'msapplication-TileColor', content: themeColor },
+  { name: 'msapplication-config', content: assets.browserConfig },
+  { name: 'referrer', content: 'strict-origin-when-cross-origin' },
+  { name: 'format-detection', content: 'telephone=no' },
+  { name: 'application-name', content: site.title },
+  { name: 'mobile-web-app-capable', content: 'yes' },
+];
+
+const colorMode = {
+  defaultMode: 'light',
+  respectPrefersColorScheme: false,
+};
+
+const mermaid = {
+  theme: {
+    light: 'neutral',
+    dark: 'neutral',
+  },
+};
+
+const navbarItems = [
+  {
+    type: 'doc',
+    docId: 'begin',
+    position: 'left',
+    label: 'Начало',
+  },
+  {
+    type: 'search',
+    position: 'right',
+  },
+  {
+    href: 'https://deepwiki.com/yellow-hammer/dev-rules',
+    label: 'DeepWiki',
+    position: 'right',
+  },
+  {
+    href: repositoryUrl,
+    label: 'GitHub',
+    position: 'right',
+  },
+];
+
+const footerLinks = [
+  {
+    title: 'Сообщество',
+    items: [
+      {
+        label: 'Отправить отзыв',
+        href: `${repositoryUrl}/issues`,
+      },
+      {
+        label: 'Предложить изменения',
+        href: `${repositoryUrl}/pulls`,
+      },
+    ],
+  },
+  {
+    title: 'Больше информации',
+    items: [
+      {
+        label: 'Журнал изменений',
+        href: `${repositoryUrl}/blob/main/CHANGELOG.md`,
+      },
+      {
+        label: 'Telegram',
+        href: telegramUrl,
+      },
+    ],
+  },
+  {
+    title: 'Юридическая информация',
+    items: [
+      {
+        label: 'Лицензия',
+        href: `${repositoryUrl}/blob/main/LICENSE`,
+      },
+    ],
+  },
+];
+
+const headTags = [
+  {
+    tagName: 'link',
+    attributes: {
+      rel: 'manifest',
+      href: assets.manifest,
+    },
+  },
+  {
+    tagName: 'link',
+    attributes: {
+      rel: 'apple-touch-icon',
+      href: assets.appleTouchIcon,
+    },
+  },
+  {
+    tagName: 'meta',
+    attributes: {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes',
+    },
+  },
+  {
+    tagName: 'meta',
+    attributes: {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: 'default',
+    },
+  },
+  {
+    tagName: 'meta',
+    attributes: {
+      name: 'apple-mobile-web-app-title',
+      content: 'Dev Rules',
+    },
+  },
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.title,
+  alternateName: 'Dev Rules',
+  url: siteBaseUrl,
+  description: site.tagline,
+  inLanguage: 'ru-RU',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Yellow Hammer',
+    url: organizationUrl,
+    logo: {
+      '@type': 'ImageObject',
+      url: absoluteUrl(assets.ogImage),
+    },
+    sameAs: [organizationUrl, telegramUrl],
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${siteBaseUrl}search?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
+  mainEntity: {
+    '@type': 'DocumentationSite',
+    name: 'Документация по разработке в 1С',
+    description:
+      'Полное руководство по стандартам разработки, лучшим практикам и инструментам для разработки в 1С:Предприятие 8',
+    keywords: [
+      '1С',
+      'разработка',
+      'стандарты',
+      'кодирование',
+      'лучшие практики',
+      'DevOps',
+      'документация',
+    ],
+    inLanguage: 'ru-RU',
+    isAccessibleForFree: true,
+    copyrightYear: new Date().getFullYear(),
+    copyrightHolder: {
+      '@type': 'Organization',
+      name: 'Yellow Hammer',
+    },
+  },
+};
+
+function structuredDataPlugin() {
+  return {
+    name: 'structured-data-plugin',
+    injectHtmlTags() {
+      return {
+        headTags: [
+          {
+            tagName: 'script',
+            attributes: {
+              type: 'application/ld+json',
+            },
+            innerHTML: JSON.stringify(structuredData),
+          },
+        ],
+      };
+    },
+  };
+}
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
+  title: site.title,
+  tagline: site.tagline,
+  favicon: assets.favicon,
+
+  url: site.url,
+  baseUrl: site.baseUrl,
+
+  organizationName: site.organizationName,
+  projectName: site.projectName,
   deploymentBranch: 'gh-pages',
 
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
-  // Markdown configuration
+  i18n: {
+    defaultLocale: 'ru',
+    locales: ['ru'],
+  },
+
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
@@ -47,6 +294,11 @@ const config = {
           editCurrentVersion: true,
         },
         blog: false,
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.8,
+          ignorePatterns: ['/search/**'],
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -55,174 +307,20 @@ const config = {
   ],
 
   themeConfig: {
-    // Open Graph image for social media previews
-    image: 'img/og-image.png',
-
-    // Comprehensive meta tags for SEO and social media
-    metadata: [
-      // Basic SEO
-      {
-        name: 'description',
-        content:
-          'Набор практик и стандартов для качественной разработки в 1С. Стандарты кодирования, лучшие практики, инструменты разработки и DevOps процессы.',
-      },
-      {
-        name: 'keywords',
-        content:
-          '1С, разработка, стандарты, кодирование, лучшие практики, DevOps, документация, программирование',
-      },
-      { name: 'author', content: 'Yellow Hammer' },
-      { name: 'robots', content: 'index, follow' },
-      { name: 'language', content: 'ru' },
-      { name: 'revisit-after', content: '7 days' },
-
-      // Open Graph (Facebook, LinkedIn, etc.)
-      { property: 'og:type', content: 'website' },
-      { property: 'og:site_name', content: 'Соглашение о разработке' },
-      { property: 'og:locale', content: 'ru_RU' },
-      { property: 'og:locale:alternate', content: 'en_US' },
-      {
-        property: 'og:image',
-        content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
-      },
-      { property: 'og:image:width', content: '1200' },
-      { property: 'og:image:height', content: '630' },
-      { property: 'og:image:type', content: 'image/png' },
-      {
-        property: 'og:image:alt',
-        content:
-          'Соглашение о разработке - Набор практик и стандартов для качественной разработки в 1С',
-      },
-      {
-        property: 'og:image:secure_url',
-        content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
-      },
-      { property: 'og:determiner', content: 'auto' },
-
-      // Twitter Cards
-      { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:site', content: '@YellowHummer' },
-      { name: 'twitter:creator', content: '@YellowHummer' },
-      {
-        name: 'twitter:image',
-        content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
-      },
-      {
-        name: 'twitter:image:alt',
-        content:
-          'Соглашение о разработке - Набор практик и стандартов для качественной разработки в 1С',
-      },
-      { name: 'twitter:domain', content: 'yellow-hammer.github.io' },
-
-      // Additional social media
-      { property: 'article:publisher', content: 'https://github.com/yellow-hammer' },
-      { property: 'article:author', content: 'Yellow Hammer' },
-      { property: 'article:section', content: 'Technology' },
-      { property: 'article:tag', content: '1С, разработка, стандарты' },
-
-      // Mobile and responsive
-      {
-        name: 'viewport',
-        content:
-          'width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes, viewport-fit=cover',
-      },
-      { name: 'theme-color', content: '#ffd700' },
-      { name: 'msapplication-TileColor', content: '#ffd700' },
-      { name: 'msapplication-config', content: '/dev-rules/browserconfig.xml' },
-
-      // Security
-      { name: 'referrer', content: 'strict-origin-when-cross-origin' },
-      { name: 'format-detection', content: 'telephone=no' },
-
-      // Additional meta for better compatibility
-      {
-        name: 'msapplication-TileImage',
-        content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
-      },
-      {
-        name: 'msapplication-square150x150logo',
-        content: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
-      },
-      { property: 'og:updated_time', content: new Date().toISOString() },
-
-      // PWA
-      { name: 'application-name', content: 'Соглашение о разработке' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' },
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
-      { name: 'apple-mobile-web-app-title', content: 'Dev Rules' },
-      { name: 'mobile-web-app-capable', content: 'yes' },
-    ],
-
-    mermaid: {
-      theme: { light: 'neutral', dark: 'dark' },
-    },
+    image: assets.ogImage,
+    metadata,
+    colorMode,
+    mermaid,
     navbar: {
-      title: 'Соглашение о разработке',
-      items: [
-        {
-          type: 'doc',
-          docId: 'begin',
-          position: 'left',
-          label: 'Начало',
-        },
-        {
-          type: 'search',
-          position: 'right',
-        },
-        {
-          href: 'https://deepwiki.com/yellow-hammer/dev-rules',
-          label: 'DeepWiki',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/yellow-hammer/dev-rules',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+      title: site.title,
+      items: navbarItems,
     },
     prism: {
       additionalLanguages: ['bsl'],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Сообщество',
-          items: [
-            {
-              label: 'Отправить отзыв',
-              href: 'https://github.com/yellow-hammer/dev-rules/issues',
-            },
-            {
-              label: 'Предложить изменения',
-              href: 'https://github.com/yellow-hammer/dev-rules/pulls',
-            },
-          ],
-        },
-        {
-          title: 'Больше информации',
-          items: [
-            {
-              label: 'Журнал изменений',
-              href: 'https://github.com/yellow-hammer/dev-rules/blob/main/CHANGELOG.md',
-            },
-            {
-              label: 'Telegram',
-              href: 'https://t.me/YellowHummer',
-            },
-          ],
-        },
-        {
-          title: 'Юридическая информация',
-          items: [
-            {
-              label: 'Лицензия',
-              href: 'https://github.com/yellow-hammer/dev-rules/blob/main/LICENSE',
-            },
-          ],
-        },
-      ],
+      links: footerLinks,
       copyright: `Copyright © ${new Date().getFullYear()} Yellow Hammer`,
     },
     docs: {
@@ -241,119 +339,10 @@ const config = {
         docsRouteBasePath: '/',
       },
     ],
-    // SEO Plugin for dynamic canonical URLs and meta tags
-    require.resolve('./src/plugins/seo-plugin'),
-    // Plugin for structured data
-    function structuredDataPlugin() {
-      return {
-        name: 'structured-data-plugin',
-        injectHtmlTags() {
-          return {
-            headTags: [
-              {
-                tagName: 'script',
-                attributes: {
-                  type: 'application/ld+json',
-                },
-                innerHTML: JSON.stringify({
-                  '@context': 'https://schema.org',
-                  '@type': 'WebSite',
-                  name: 'Соглашение о разработке',
-                  alternateName: 'Dev Rules',
-                  url: 'https://yellow-hammer.github.io/dev-rules/',
-                  description: 'Набор практик и стандартов для качественной разработки в 1С',
-                  publisher: {
-                    '@type': 'Organization',
-                    name: 'Yellow Hammer',
-                    url: 'https://github.com/yellow-hammer',
-                    logo: {
-                      '@type': 'ImageObject',
-                      url: 'https://yellow-hammer.github.io/dev-rules/img/og-image.png',
-                    },
-                    sameAs: ['https://github.com/yellow-hammer', 'https://t.me/YellowHummer'],
-                  },
-                  potentialAction: {
-                    '@type': 'SearchAction',
-                    target: {
-                      '@type': 'EntryPoint',
-                      urlTemplate:
-                        'https://yellow-hammer.github.io/dev-rules/search?q={search_term_string}',
-                    },
-                    'query-input': 'required name=search_term_string',
-                  },
-                  mainEntity: {
-                    '@type': 'DocumentationSite',
-                    name: 'Документация по разработке в 1С',
-                    description:
-                      'Полное руководство по стандартам разработки, лучшим практикам и инструментам для разработки в 1С:Предприятие 8',
-                    keywords: [
-                      '1С',
-                      'разработка',
-                      'стандарты',
-                      'кодирование',
-                      'лучшие практики',
-                      'DevOps',
-                      'документация',
-                    ],
-                    inLanguage: 'ru-RU',
-                    isAccessibleForFree: true,
-                    license: 'https://creativecommons.org/licenses/by-sa/4.0/',
-                    copyrightYear: new Date().getFullYear(),
-                    copyrightHolder: {
-                      '@type': 'Organization',
-                      name: 'Yellow Hammer',
-                    },
-                  },
-                }),
-              },
-            ],
-          };
-        },
-      };
-    },
+    structuredDataPlugin,
   ],
 
-  stylesheets: ['src/css/custom.css'],
-
-  // Additional HTML head tags
-  // Примечание: canonical URL теперь добавляется динамически через SEO плагин
-  headTags: [
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'manifest',
-        href: '/dev-rules/manifest.json',
-      },
-    },
-    {
-      tagName: 'link',
-      attributes: {
-        rel: 'apple-touch-icon',
-        href: '/dev-rules/img/icon.ico',
-      },
-    },
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'apple-mobile-web-app-capable',
-        content: 'yes',
-      },
-    },
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'apple-mobile-web-app-status-bar-style',
-        content: 'default',
-      },
-    },
-    {
-      tagName: 'meta',
-      attributes: {
-        name: 'apple-mobile-web-app-title',
-        content: 'Dev Rules',
-      },
-    },
-  ],
+  headTags,
 };
 
 module.exports = config;
