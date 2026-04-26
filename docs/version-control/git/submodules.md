@@ -1,16 +1,14 @@
 ---
 sidebar_position: 7
 sidebar_label: Submodules
-title: Git Submodules
+title: Подмодули Git
 ---
 
-## Submodules
-
-### Что это
+## Что это
 
 **Git Submodules** позволяют включать один Git репозиторий как подкаталог другого. Код остается отдельным репозиторием, но доступен из основного проекта.
 
-### Когда использовать
+## Когда использовать
 
 - Общие библиотеки в нескольких проектах
 - Общие расширения конфигурации
@@ -19,7 +17,7 @@ title: Git Submodules
 
 ---
 
-### Добавление Submodule
+## Добавление
 
 ```bash
 git submodule add <url> <path>
@@ -41,15 +39,15 @@ git submodule add https://github.com/company/infostart-print-wizard.git src/cfe/
 
 ---
 
-### Клонирование с Submodules
+## Клонирование
 
-#### Вариант 1: Рекурсивное клонирование
+### Вариант 1: Рекурсивное клонирование
 
 ```bash
 git clone --recursive <url>
 ```
 
-#### Вариант 2: После обычного клонирования
+### Вариант 2: После обычного клонирования
 
 ```bash
 git clone <url>
@@ -59,9 +57,9 @@ git submodule update --init --recursive
 
 ---
 
-### Обновление Submodules
+## Обновление
 
-#### Обновить конкретный submodule
+### Обновить конкретный подмодуль
 
 ```bash
 cd src/cfe/infostart-print-wizard
@@ -71,7 +69,7 @@ git add src/cfe/infostart-print-wizard
 git commit -m "chore: Обновлён submodule infostart-print-wizard"
 ```
 
-#### Обновить все submodules
+### Обновить все подмодули
 
 ```bash
 git submodule update --remote
@@ -81,15 +79,15 @@ git commit -m "chore: Обновлены все submodules"
 
 ---
 
-### Работа с Submodules
+## Работа
 
-#### Просмотр статуса
+### Просмотр статуса
 
 ```bash
 git submodule status
 ```
 
-#### Переключение на конкретную версию
+### Переключение на конкретную версию
 
 ```bash
 cd src/cfe/infostart-print-wizard
@@ -99,7 +97,7 @@ git add src/cfe/infostart-print-wizard
 git commit -m "chore: Зафиксирована версия v1.2.0"
 ```
 
-#### Внесение изменений в submodule
+### Внесение изменений в подмодуль
 
 ```bash
 cd src/cfe/infostart-print-wizard
@@ -114,7 +112,7 @@ git commit -m "chore: Обновлен submodule с исправлениями"
 
 ---
 
-### Удаление Submodule
+## Удаление
 
 ```bash
 # 1. Удалить из индекса
@@ -132,7 +130,7 @@ git commit -m "chore: Удален submodule infostart-print-wizard"
 
 ---
 
-### Полезные команды
+## Полезные команды
 
 ```bash
 # Инициализировать все submodules
@@ -153,9 +151,9 @@ git submodule foreach 'git pull origin main'
 
 ---
 
-### Устранение проблем
+## Устранение проблем
 
-#### Submodule показывает как измененный
+### Показывается как измененный
 
 ```bash
 # Если изменения нужны
@@ -166,7 +164,7 @@ git commit -m "chore: Обновлен submodule"
 git submodule update --init
 ```
 
-#### Submodule не обновляется
+### Не обновляется
 
 ```bash
 git submodule update --init --recursive --force
@@ -174,10 +172,10 @@ git submodule update --init --recursive --force
 
 ---
 
-### Альтернативы
+## Альтернативы
 
-| Подход          | Описание                           |
-| --------------- | ---------------------------------- |
-| Git Subtree     | Встраивает код в репозиторий       |
-| Монорепозиторий | Один репозиторий для всех проектов |
-| Package Manager | Для внешних зависимостей           |
+| Подход             | Описание                           |
+| ------------------ | ---------------------------------- |
+| Git Subtree        | Встраивает код в репозиторий       |
+| Единый репозиторий | Один репозиторий для всех проектов |
+| Package Manager    | Для внешних зависимостей           |

@@ -4,18 +4,16 @@ sidebar_label: Git Flow
 title: Git Flow и стратегии ветвления
 ---
 
-## Git Flow
-
-### Описание
+## Описание
 
 Git-flow — расширение Git для модели ветвления Винсента Дриссена.
 
-### Ресурсы
+## Ресурсы
 
 - Графическая шпаргалка: [http://danielkummer.github.io/git-flow-cheatsheet/](http://danielkummer.github.io/git-flow-cheatsheet/)
 - Оригинальная статья: [https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model/)
 
-### Структура веток
+## Структура веток
 
 ```
 main (production)
@@ -38,7 +36,7 @@ main (production)
 
 ---
 
-### Установка
+## Установка
 
 :::note Windows
 Для использования Git Flow в Windows установите [Gitflow-next](https://git-flow.sh/) через `winget`:
@@ -51,9 +49,9 @@ winget install --id Gitflow.Gitflow-next
 
 ---
 
-### Последовательность шагов
+## Последовательность шагов
 
-#### Инициализация
+### Инициализация
 
 ```bash
 git flow init -d -f
@@ -61,7 +59,7 @@ git flow init -d -f
 
 Будут приняты настройки по умолчанию.
 
-#### Публикация ветки develop
+### Публикация ветки develop
 
 Если в проекте еще нет ветки develop:
 
@@ -71,16 +69,16 @@ git push origin develop
 
 ---
 
-### Добавление новой функции
+## Добавление новой функции
 
-#### Создание feature ветки
+### Создание feature-ветки
 
 ```bash
 git checkout develop
 git flow feature start <номер-задачи>
 ```
 
-#### Разработка
+### Разработка
 
 Вносите изменения и фиксируйте:
 
@@ -89,15 +87,15 @@ git add .
 git commit -m "feat: Описание изменений"
 ```
 
-#### Завершение feature ветки
+### Завершение feature-ветки
 
-##### Вариант 1: Через git flow (без проверки кода)
+#### Вариант 1: Через git flow без проверки кода
 
 ```bash
 git flow feature finish <номер-задачи>
 ```
 
-##### Вариант 2: Через Merge Request (с проверкой кода)
+#### Вариант 2: Через Merge Request с проверкой кода
 
 ```bash
 git push -u origin feature/<номер-задачи>
@@ -108,16 +106,16 @@ git push -u origin feature/<номер-задачи>
 
 ---
 
-### Подготовка релиза
+## Подготовка релиза
 
-#### Создание release ветки
+### Создание release-ветки
 
 ```bash
 git checkout develop
 git flow release start <номер-релиза>
 ```
 
-#### Финальные правки
+### Финальные правки
 
 - Обновление версии
 - Исправление мелких багов
@@ -125,7 +123,7 @@ git flow release start <номер-релиза>
 - Сортировка объектов метаданных в дереве
 - Обновление зависимостей (например, расширения, подключённые через submodule)
 
-#### Завершение release
+### Завершение release-ветки
 
 ```bash
 git flow release finish <номер-релиза>
@@ -140,7 +138,7 @@ git flow release finish <номер-релиза>
 
 ---
 
-### Срочные исправления (hotfix)
+## Срочные исправления
 
 Используется когда нужно срочно исправить баг в промышленной среде.
 
@@ -161,9 +159,9 @@ Hotfix автоматически сливается в main и develop.
 
 ---
 
-### Справочник команд git flow
+## Справочник команд
 
-#### Feature
+### Feature
 
 ```
 git flow feature [list]
@@ -177,7 +175,7 @@ git flow feature checkout [<name>]
 git flow feature pull <remote> [<name>]
 ```
 
-#### Release
+### Release
 
 ```
 git flow release [list]
@@ -187,7 +185,7 @@ git flow release publish <name>
 git flow release track <name>
 ```
 
-#### Hotfix
+### Hotfix
 
 ```
 git flow hotfix [list]
@@ -197,9 +195,9 @@ git flow hotfix finish <version>
 
 ---
 
-### Альтернативы
+## Альтернативы
 
-#### GitHub Flow (для небольших команд)
+### GitHub Flow для небольших команд
 
 Простая модель:
 
@@ -218,7 +216,7 @@ git push -u origin add-new-feature
 # Создать Pull Request
 ```
 
-#### GitLab Flow (с окружениями)
+### GitLab Flow с окружениями
 
 Для проектов с несколькими окружениями:
 
@@ -232,9 +230,9 @@ production
 
 ---
 
-### Рекомендации
+## Рекомендации
 
-#### Выбор стратегии
+### Выбор стратегии
 
 | Стратегия   | Когда использовать                      |
 | ----------- | --------------------------------------- |
@@ -242,7 +240,7 @@ production
 | GitHub Flow | Небольшие команды, частые развёртывания |
 | GitLab Flow | Несколько окружений (dev, test, prod)   |
 
-#### Соглашения
+### Соглашения
 
 1. **Именование веток:**
    - `feature/название-функции`
