@@ -170,6 +170,11 @@ const config = {
           position: 'right',
         },
         {
+          href: 'https://deepwiki.com/yellow-hammer/dev-rules',
+          label: 'DeepWiki',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/yellow-hammer/dev-rules',
           label: 'GitHub',
           position: 'right',
