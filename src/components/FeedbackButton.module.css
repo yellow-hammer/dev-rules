@@ -1,77 +1,98 @@
 .feedbackContainer {
   position: relative;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .feedbackButton {
   background-color: var(--ifm-color-primary);
-  color: white;
+  color: var(--ifm-color-white);
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 0.625rem 1rem;
+  border-radius: var(--ifm-button-border-radius);
   cursor: pointer;
-  min-height: 44px; /* Минимальный размер для удобного нажатия на мобильных */
-  /* Temporarily hide feedback button in UI */
-  display: none !important;
+  font-weight: var(--ifm-font-weight-semibold);
+  min-height: 44px;
+}
+
+.feedbackButton:hover,
+.feedbackButton:focus {
+  background-color: var(--ifm-color-primary-dark);
 }
 
 .feedbackForm {
   position: absolute;
   z-index: 10;
-  bottom: 100%;
-  right: 0;
-  background: white;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
   padding: 1rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  max-width: calc(100vw - 2rem); /* Адаптивная ширина для мобильных */
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+  width: 28rem;
+  max-width: calc(100vw - 2rem);
+  text-align: left;
+}
+
+.feedbackLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--ifm-font-weight-semibold);
 }
 
 .feedbackForm textarea {
   width: 100%;
-  margin-bottom: 10px;
   min-height: 100px;
   resize: vertical;
+  padding: 0.75rem;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
 }
 
-.feedbackForm button {
-  margin-right: 8px;
-  min-height: 44px; /* Минимальный размер для удобного нажатия */
+.feedbackStatus {
+  margin: 0.75rem 0 0;
+  color: var(--ifm-color-danger-dark);
+  font-size: 0.9rem;
 }
 
-/* Адаптивность для мобильных устройств */
+.feedbackActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 768px) {
   .feedbackContainer {
     margin-top: 1.5rem;
   }
 
   .feedbackForm {
-    right: auto;
-    left: 0;
+    left: 50%;
     width: 100%;
     max-width: calc(100vw - 1rem);
     padding: 0.75rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
 
   .feedbackForm textarea {
-    font-size: 16px; /* Предотвращает масштабирование на iOS */
+    font-size: 16px;
     min-height: 120px;
   }
 
-  .feedbackForm button {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 0.5rem;
+  .feedbackActions {
+    flex-direction: column;
   }
 
-  .feedbackForm button:last-child {
-    margin-bottom: 0;
+  .feedbackActions button {
+    width: 100%;
   }
 }
 
-/* Адаптивность для очень маленьких экранов */
 @media screen and (max-width: 480px) {
   .feedbackForm {
     padding: 0.5rem;

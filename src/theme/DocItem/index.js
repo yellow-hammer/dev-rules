@@ -1,12 +1,13 @@
 import React from 'react';
 import DocItem from '@theme-original/DocItem';
 import FeedbackButton from '@site/src/components/FeedbackButton';
+import styles from './styles.module.css';
 
 export default function DocItemWrapper(props) {
   return (
     <>
       <DocItem {...props} />
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+      <div className={styles.feedback}>
         <FeedbackButton />
       </div>
     </>

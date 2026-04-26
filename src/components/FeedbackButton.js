@@ -1,81 +1,103 @@
 import React, { useState } from 'react';
-import styles from './FeedbackButton.module.css';
 import { useLocation } from '@docusaurus/router';
+import styles from './FeedbackButton.module.css';
 
 export default function FeedbackButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [feedback, setFeedback] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState('');
   const location = useLocation();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    try {
-      // Текущий URL страницы
-      const pageUrl = window.location.href;
-      const pagePath = location.pathname;
+    const trimmedFeedback = feedback.trim();
+    if (!trimmedFeedback) {
+      setStatus('Опишите замечание перед отправкой.');
+      return;
+    }
 
-      // Получаем заголовок страницы
-      const pageTitle = document.title;
+    const pageUrl = globalThis.location.href;
+    const pagePath = location.pathname;
+    const pageTitle = document.title;
 
-      // Формируем тело для создания issue
-      const issueBody = `
+    const issueBody = `
 ## Замечание к странице
 
 **Страница:** [${pageTitle}](${pageUrl})
 **Путь:** \`${pagePath}\`
 
-### Содержание замечания:
-${feedback}
+### Содержание замечания
+
+${trimmedFeedback}
 
 ---
 *Отправлено через форму обратной связи на сайте.*
-      `;
+`;
 
-      // Открываем GitHub issue в новой вкладке с предзаполненными данными
-      const repoUrl = 'https://github.com/yellow-hammer/dev-rules/issues/new';
-      const issueUrl = new URL(repoUrl);
-      issueUrl.searchParams.append('title', `Замечание к странице: ${pageTitle}`);
-      issueUrl.searchParams.append('body', issueBody);
+    const issueUrl = new URL('https://github.com/yellow-hammer/dev-rules/issues/new');
+    issueUrl.searchParams.set('title', `Замечание к странице: ${pageTitle}`);
+    issueUrl.searchParams.set('body', issueBody);
 
-      window.open(issueUrl.toString(), '_blank');
+    const issueWindow = globalThis.open(issueUrl.toString(), '_blank', 'noopener,noreferrer');
 
-      // Сбрасываем форму
+    if (issueWindow) {
       setFeedback('');
       setIsOpen(false);
-      alert('Спасибо! Вы будете перенаправлены на GitHub для создания issue.');
-    } catch (error) {
-      console.error('Ошибка при отправке замечания:', error);
-      alert('Произошла ошибка при отправке замечания. Пожалуйста, попробуйте позже.');
-    } finally {
-      setIsSubmitting(false);
+      setStatus('');
+      return;
     }
+
+    setStatus(
+      'Браузер заблокировал открытие GitHub. Разрешите всплывающие окна и повторите отправку.'
+    );
   };
 
   return (
     <div className={styles.feedbackContainer}>
-      <button className={styles.feedbackButton} onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className={styles.feedbackButton}
+        type="button"
+        aria-controls="page-feedback-form"
+        aria-expanded={isOpen}
+        onClick={() => {
+          setIsOpen(!isOpen);
+          setStatus('');
+        }}
+      >
         Отправить замечание
       </button>
 
       {isOpen && (
-        <div className={styles.feedbackForm}>
+        <div className={styles.feedbackForm} id="page-feedback-form">
           <form onSubmit={handleSubmit}>
+            <label className={styles.feedbackLabel} htmlFor="page-feedback-text">
+              Замечание к странице
+            </label>
             <textarea
+              id="page-feedback-text"
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               placeholder="Опишите ваше замечание..."
               rows={4}
               required
             />
-            <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Отправка...' : 'Отправить'}
-            </button>
-            <button type="button" onClick={() => setIsOpen(false)}>
-              Отмена
-            </button>
+            {status && <p className={styles.feedbackStatus}>{status}</p>}
+            <div className={styles.feedbackActions}>
+              <button className="button button--primary button--sm" type="submit">
+                Открыть GitHub issue
+              </button>
+              <button
+                className="button button--secondary button--sm"
+                type="button"
+                onClick={() => {
+                  setIsOpen(false);
+                  setStatus('');
+                }}
+              >
+                Отмена
+              </button>
+            </div>
           </form>
         </div>
       )}
