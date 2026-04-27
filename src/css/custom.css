@@ -5,33 +5,32 @@
  */
 
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #a86b00;
+  --ifm-color-primary-dark: #976000;
+  --ifm-color-primary-darker: #8e5b00;
+  --ifm-color-primary-darkest: #754a00;
+  --ifm-color-primary-light: #ba7800;
+  --ifm-color-primary-lighter: #c47e00;
+  --ifm-color-primary-lightest: #dc9100;
   --dev-rules-color-accent: #ffd700;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-line-height-base: 1.65;
+  --docusaurus-highlighted-code-line-bg: rgba(168, 107, 0, 0.12);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #ffc94d;
+  --ifm-color-primary-dark: #ffbd24;
+  --ifm-color-primary-darker: #ffb70f;
+  --ifm-color-primary-darkest: #d99100;
+  --ifm-color-primary-light: #ffd566;
+  --ifm-color-primary-lighter: #ffdb7a;
+  --ifm-color-primary-lightest: #ffe49c;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 215, 0, 0.18);
 }
 
 code[class*='language-bsl'],
 pre[class*='language-bsl'] {
-  color: #f8f8f2;
-  background: #282a36;
   font-family: 'Fira Code', 'Courier New', Courier, monospace;
   direction: ltr;
   text-align: left;
@@ -41,6 +40,25 @@ pre[class*='language-bsl'] {
   line-height: 1.5;
   tab-size: 4;
   hyphens: none;
+}
+
+[data-theme='dark'] code[class*='language-bsl'],
+[data-theme='dark'] pre[class*='language-bsl'] {
+  color: #e6e6e6;
+  background: #2d2d2d;
+}
+
+/* Контейнер код-блока Docusaurus берёт фон из --prism-background-color */
+[data-theme='dark'] div[class*='codeBlockContainer']:has(code[class*='language-bsl']),
+[data-theme='dark'] div[class*='codeBlockContainer']:has(pre[class*='language-bsl']) {
+  --prism-background-color: #2d2d2d;
+  background-color: #2d2d2d;
+}
+
+/* Заметная рамка у всех код-блоков в тёмной теме */
+[data-theme='dark'] div[class*='codeBlockContainer'] {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .markdown .docusaurus-mermaid-container {
@@ -60,96 +78,120 @@ pre[class*='language-bsl'] {
 }
 
 [data-theme='dark'] .markdown .docusaurus-mermaid-container {
-  border-color: #334155;
-  background: #f8fafc;
+  border-color: var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
 }
 
-code[class*='language-bsl'] .token.comment,
-code[class*='language-bsl'] .token.prolog,
-code[class*='language-bsl'] .token.doctype,
-code[class*='language-bsl'] .token.cdata,
-pre[class*='language-bsl'] .token.comment,
-pre[class*='language-bsl'] .token.prolog,
-pre[class*='language-bsl'] .token.doctype,
-pre[class*='language-bsl'] .token.cdata {
+/* Активный пункт сайдбара — фирменная полоска слева */
+.theme-doc-sidebar-menu .menu__link--active:not(.menu__link--sublist) {
+  box-shadow: inset 3px 0 0 var(--dev-rules-color-accent);
+}
+
+/* Inline-код в тексте: тонкая рамка и тёплый фон */
+.markdown :not(pre) > code {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: rgba(255, 215, 0, 0.08);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+[data-theme='dark'] .markdown :not(pre) > code {
+  background: rgba(255, 215, 0, 0.12);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Admonitions: округление и более выраженная левая полоска */
+.theme-admonition {
+  border-radius: 8px;
+  border-left-width: 4px;
+}
+
+[data-theme='dark'] code[class*='language-bsl'] .token.comment,
+[data-theme='dark'] code[class*='language-bsl'] .token.prolog,
+[data-theme='dark'] code[class*='language-bsl'] .token.doctype,
+[data-theme='dark'] code[class*='language-bsl'] .token.cdata,
+[data-theme='dark'] pre[class*='language-bsl'] .token.comment,
+[data-theme='dark'] pre[class*='language-bsl'] .token.prolog,
+[data-theme='dark'] pre[class*='language-bsl'] .token.doctype,
+[data-theme='dark'] pre[class*='language-bsl'] .token.cdata {
   color: #6272a4;
 }
 
-code[class*='language-bsl'] .token.punctuation,
-pre[class*='language-bsl'] .token.punctuation {
+[data-theme='dark'] code[class*='language-bsl'] .token.punctuation,
+[data-theme='dark'] pre[class*='language-bsl'] .token.punctuation {
   color: #f8f8f2;
 }
 
-code[class*='language-bsl'] .token.property,
-code[class*='language-bsl'] .token.tag,
-code[class*='language-bsl'] .token.constant,
-code[class*='language-bsl'] .token.symbol,
-code[class*='language-bsl'] .token.deleted,
-pre[class*='language-bsl'] .token.property,
-pre[class*='language-bsl'] .token.tag,
-pre[class*='language-bsl'] .token.constant,
-pre[class*='language-bsl'] .token.symbol,
-pre[class*='language-bsl'] .token.deleted {
+[data-theme='dark'] code[class*='language-bsl'] .token.property,
+[data-theme='dark'] code[class*='language-bsl'] .token.tag,
+[data-theme='dark'] code[class*='language-bsl'] .token.constant,
+[data-theme='dark'] code[class*='language-bsl'] .token.symbol,
+[data-theme='dark'] code[class*='language-bsl'] .token.deleted,
+[data-theme='dark'] pre[class*='language-bsl'] .token.property,
+[data-theme='dark'] pre[class*='language-bsl'] .token.tag,
+[data-theme='dark'] pre[class*='language-bsl'] .token.constant,
+[data-theme='dark'] pre[class*='language-bsl'] .token.symbol,
+[data-theme='dark'] pre[class*='language-bsl'] .token.deleted {
   color: #ff79c6;
 }
 
-code[class*='language-bsl'] .token.boolean,
-code[class*='language-bsl'] .token.number,
-pre[class*='language-bsl'] .token.boolean,
-pre[class*='language-bsl'] .token.number {
+[data-theme='dark'] code[class*='language-bsl'] .token.boolean,
+[data-theme='dark'] code[class*='language-bsl'] .token.number,
+[data-theme='dark'] pre[class*='language-bsl'] .token.boolean,
+[data-theme='dark'] pre[class*='language-bsl'] .token.number {
   color: #bd93f9;
 }
 
-code[class*='language-bsl'] .token.selector,
-code[class*='language-bsl'] .token.attr-name,
-code[class*='language-bsl'] .token.string,
-code[class*='language-bsl'] .token.char,
-code[class*='language-bsl'] .token.builtin,
-code[class*='language-bsl'] .token.inserted,
-pre[class*='language-bsl'] .token.selector,
-pre[class*='language-bsl'] .token.attr-name,
-pre[class*='language-bsl'] .token.string,
-pre[class*='language-bsl'] .token.char,
-pre[class*='language-bsl'] .token.builtin,
-pre[class*='language-bsl'] .token.inserted {
+[data-theme='dark'] code[class*='language-bsl'] .token.selector,
+[data-theme='dark'] code[class*='language-bsl'] .token.attr-name,
+[data-theme='dark'] code[class*='language-bsl'] .token.string,
+[data-theme='dark'] code[class*='language-bsl'] .token.char,
+[data-theme='dark'] code[class*='language-bsl'] .token.builtin,
+[data-theme='dark'] code[class*='language-bsl'] .token.inserted,
+[data-theme='dark'] pre[class*='language-bsl'] .token.selector,
+[data-theme='dark'] pre[class*='language-bsl'] .token.attr-name,
+[data-theme='dark'] pre[class*='language-bsl'] .token.string,
+[data-theme='dark'] pre[class*='language-bsl'] .token.char,
+[data-theme='dark'] pre[class*='language-bsl'] .token.builtin,
+[data-theme='dark'] pre[class*='language-bsl'] .token.inserted {
   color: #50fa7b;
 }
 
-code[class*='language-bsl'] .token.operator,
-code[class*='language-bsl'] .token.entity,
-code[class*='language-bsl'] .token.url,
-code[class*='language-bsl'] .language-css .token.string,
-code[class*='language-bsl'] .style .token.string,
-code[class*='language-bsl'] .token.variable,
-pre[class*='language-bsl'] .token.operator,
-pre[class*='language-bsl'] .token.entity,
-pre[class*='language-bsl'] .token.url,
-pre[class*='language-bsl'] .language-css .token.string,
-pre[class*='language-bsl'] .style .token.string,
-pre[class*='language-bsl'] .token.variable {
+[data-theme='dark'] code[class*='language-bsl'] .token.operator,
+[data-theme='dark'] code[class*='language-bsl'] .token.entity,
+[data-theme='dark'] code[class*='language-bsl'] .token.url,
+[data-theme='dark'] code[class*='language-bsl'] .language-css .token.string,
+[data-theme='dark'] code[class*='language-bsl'] .style .token.string,
+[data-theme='dark'] code[class*='language-bsl'] .token.variable,
+[data-theme='dark'] pre[class*='language-bsl'] .token.operator,
+[data-theme='dark'] pre[class*='language-bsl'] .token.entity,
+[data-theme='dark'] pre[class*='language-bsl'] .token.url,
+[data-theme='dark'] pre[class*='language-bsl'] .language-css .token.string,
+[data-theme='dark'] pre[class*='language-bsl'] .style .token.string,
+[data-theme='dark'] pre[class*='language-bsl'] .token.variable {
   color: #f8f8f2;
 }
 
-code[class*='language-bsl'] .token.atrule,
-code[class*='language-bsl'] .token.attr-value,
-code[class*='language-bsl'] .token.function,
-code[class*='language-bsl'] .token.class-name,
-pre[class*='language-bsl'] .token.atrule,
-pre[class*='language-bsl'] .token.attr-value,
-pre[class*='language-bsl'] .token.function,
-pre[class*='language-bsl'] .token.class-name {
+[data-theme='dark'] code[class*='language-bsl'] .token.atrule,
+[data-theme='dark'] code[class*='language-bsl'] .token.attr-value,
+[data-theme='dark'] code[class*='language-bsl'] .token.function,
+[data-theme='dark'] code[class*='language-bsl'] .token.class-name,
+[data-theme='dark'] pre[class*='language-bsl'] .token.atrule,
+[data-theme='dark'] pre[class*='language-bsl'] .token.attr-value,
+[data-theme='dark'] pre[class*='language-bsl'] .token.function,
+[data-theme='dark'] pre[class*='language-bsl'] .token.class-name {
   color: #f1fa8c;
 }
 
-code[class*='language-bsl'] .token.keyword,
-pre[class*='language-bsl'] .token.keyword {
-  color: #8be9fd;
+[data-theme='dark'] code[class*='language-bsl'] .token.keyword,
+[data-theme='dark'] pre[class*='language-bsl'] .token.keyword {
+  color: #cc7832;
 }
 
-code[class*='language-bsl'] .token.regex,
-code[class*='language-bsl'] .token.important,
-pre[class*='language-bsl'] .token.regex,
-pre[class*='language-bsl'] .token.important {
+[data-theme='dark'] code[class*='language-bsl'] .token.regex,
+[data-theme='dark'] code[class*='language-bsl'] .token.important,
+[data-theme='dark'] pre[class*='language-bsl'] .token.regex,
+[data-theme='dark'] pre[class*='language-bsl'] .token.important {
   color: #ffb86c;
 }
 
@@ -170,9 +212,10 @@ pre[class*='language-bsl'] .token.entity {
   cursor: help;
 }
 
-/* Компактный футер */
+/* Компактный футер с фирменной разделительной линией сверху */
 .footer {
   padding: 1rem 0 0.5rem 0;
+  border-top: 3px solid var(--dev-rules-color-accent);
 }
 
 .footer__links {

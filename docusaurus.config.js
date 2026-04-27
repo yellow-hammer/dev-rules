@@ -1,5 +1,7 @@
 // @ts-check
 
+const { themes: prismThemes } = require('prism-react-renderer');
+
 const site = {
   title: 'Соглашение о разработке',
   tagline: 'Набор практик и стандартов для качественной разработки в 1С',
@@ -316,6 +318,8 @@ const config = {
       items: navbarItems,
     },
     prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ['bsl'],
     },
     footer: {
