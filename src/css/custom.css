@@ -48,14 +48,14 @@ pre[class*='language-bsl'] {
   background: #2d2d2d;
 }
 
-/* Контейнер код-блока Docusaurus берёт фон из --prism-background-color */
+/* Docusaurus code block container uses background from --prism-background-color */
 [data-theme='dark'] div[class*='codeBlockContainer']:has(code[class*='language-bsl']),
 [data-theme='dark'] div[class*='codeBlockContainer']:has(pre[class*='language-bsl']) {
   --prism-background-color: #2d2d2d;
   background-color: #2d2d2d;
 }
 
-/* Заметная рамка у всех код-блоков в тёмной теме */
+/* Visible border for all code blocks in dark theme */
 [data-theme='dark'] div[class*='codeBlockContainer'] {
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -82,12 +82,12 @@ pre[class*='language-bsl'] {
   background: var(--ifm-background-surface-color);
 }
 
-/* Активный пункт сайдбара — фирменная полоска слева */
+/* Active sidebar item — brand accent bar on the left */
 .theme-doc-sidebar-menu .menu__link--active:not(.menu__link--sublist) {
   box-shadow: inset 3px 0 0 var(--dev-rules-color-accent);
 }
 
-/* Inline-код в тексте: тонкая рамка и тёплый фон */
+/* Inline code in text: subtle border and warm background */
 .markdown :not(pre) > code {
   border: 1px solid var(--ifm-color-emphasis-200);
   background: rgba(255, 215, 0, 0.08);
@@ -100,7 +100,7 @@ pre[class*='language-bsl'] {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Admonitions: округление и более выраженная левая полоска */
+/* Admonitions: rounded corners and a more prominent left border */
 .theme-admonition {
   border-radius: 8px;
   border-left-width: 4px;
