@@ -89,7 +89,9 @@
     "lodash-es": "4.18.1",
     "serialize-javascript": "^7.0.5",
     "tmp": ">=0.2.4",
-    "tough-cookie": ">=4.1.3"
+    "tough-cookie": ">=4.1.3",
+    "postcss": ">=8.5.10",
+    "uuid": ">=14.0.0"
   },
   "license": "MIT"
 }
