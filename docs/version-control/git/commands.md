@@ -42,15 +42,16 @@ git config --global alias.last "log -1 HEAD"
 git config --list
 ```
 
-**Для администратора (длинные пути Windows):**
+:::note Администратору
+Поддержку длинных путей в Windows включают отдельной командой с правами администратора:
 
 ```bash
 git config --system core.longpaths true
 ```
 
-Настройка редактора и работа с Git в IDE описаны в разделе [IDE](../../ide/README.md).
+:::
 
----
+Настройка редактора и работа с Git в IDE описаны в разделе [IDE](../../ide/README.md).
 
 ## Базовые операции
 
@@ -68,8 +69,6 @@ git config --system core.longpaths true
 | `git pull`                   | Получить изменения        |
 | `git fetch`                  | Получить без слияния      |
 
----
-
 ## Работа с ветками
 
 | Команда                            | Описание                      |
@@ -84,8 +83,6 @@ git config --system core.longpaths true
 | `git branch -d <ветка>`            | Удалить ветку                 |
 | `git branch -D <ветка>`            | Принудительно удалить         |
 | `git push origin --delete <ветка>` | Удалить удаленную ветку       |
-
----
 
 ## Просмотр истории
 
@@ -107,8 +104,6 @@ git log --since="2 weeks ago"
 # Просмотр коммита
 git show <коммит>
 ```
-
----
 
 ## Отмена изменений
 
@@ -136,8 +131,6 @@ git restore --staged <файл>  # То же самое (новая команд
 | `git reset --hard HEAD~1`                 | Откатить коммит, удалить все изменения                    |
 | `git commit --amend -m "новое сообщение"` | Изменить последний коммит                                 |
 
----
-
 ## Stash (временное сохранение)
 
 ```bash
@@ -152,8 +145,6 @@ git stash pop                   # Применить и удалить
 git stash drop stash@{0}        # Удалить конкретное
 git stash clear                 # Удалить все
 ```
-
----
 
 ## Теги
 
@@ -177,8 +168,6 @@ git tag -d v1.0.0                     # Удалить локально
 git push origin --delete v1.0.0       # Удалить удаленно
 ```
 
----
-
 ## Удаленные репозитории
 
 ```bash
@@ -195,8 +184,6 @@ git remote set-url origin <новый_url>
 git remote remove origin
 ```
 
----
-
 ## Сравнение (diff)
 
 ```bash
@@ -207,8 +194,6 @@ git diff --stat             # Статистика изменений
 git diff --name-only        # Только имена файлов
 ```
 
----
-
 ## Очистка
 
 ```bash
@@ -217,8 +202,6 @@ git clean -f    # Удалить неотслеживаемые файлы
 git clean -fd   # Удалить файлы и папки
 git clean -fX   # Удалить игнорируемые файлы
 ```
-
----
 
 ## Псевдонимы (сокращения)
 
@@ -232,8 +215,6 @@ git clean -fX   # Удалить игнорируемые файлы
 | `git ci`             | `git commit`               |
 | `git unstage <файл>` | `git reset HEAD -- <файл>` |
 | `git last`           | `git log -1 HEAD`          |
-
----
 
 ## Типичный рабочий процесс
 

@@ -4,13 +4,10 @@ sidebar_label: Git
 title: Работа с Git
 ---
 
-Полная документация Git с примерами:
-[https://git-scm.com/book/ru/v2](https://git-scm.com/book/ru/v2)
+Полезные источники:
 
-Интерактивный курс:
-[https://githowto.com/ru](https://githowto.com/ru)
-
----
+- [Полная документация Git с примерами (Pro Git)](https://git-scm.com/book/ru/v2)
+- [Интерактивный курс по Git](https://githowto.com/ru)
 
 ## Шаблон проекта
 
@@ -22,8 +19,6 @@ title: Работа с Git
 - Генерации CHANGELOG
 - Запуск задач из VS Code
 
----
-
 ## Когда использовать Git
 
 - Разработка расширений конфигурации
@@ -31,8 +26,6 @@ title: Работа с Git
 - Управление версиями скриптов и утилит
 - Совместная работа над проектами
 - Интеграция с CI/CD системами
-
----
 
 ## Содержание
 
@@ -44,8 +37,6 @@ title: Работа с Git
 - [Git LFS](lfs.md) — работа с большими файлами
 - [Submodules](submodules.md) — подключение внешних репозиториев
 - [Работа в IDE](../../ide/README.md) — Git в 1С:EDT и VS Code
-
----
 
 ## Соглашение о коммитах
 

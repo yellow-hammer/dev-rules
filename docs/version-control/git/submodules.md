@@ -15,15 +15,13 @@ title: Подмодули Git
 - Внешние зависимости с возможностью обновления
 - Разделение больших проектов на части
 
----
-
 ## Добавление
 
 ```bash
 git submodule add <url> <path>
 ```
 
-**Пример:**
+Пример:
 
 ```bash
 git submodule add https://github.com/company/infostart-print-wizard.git src/cfe/infostart-print-wizard
@@ -36,8 +34,6 @@ git submodule add https://github.com/company/infostart-print-wizard.git src/cfe/
     path = src/cfe/infostart-print-wizard
     url = https://github.com/company/infostart-print-wizard.git
 ```
-
----
 
 ## Клонирование
 
@@ -54,8 +50,6 @@ git clone <url>
 cd project
 git submodule update --init --recursive
 ```
-
----
 
 ## Обновление
 
@@ -76,8 +70,6 @@ git submodule update --remote
 git add .
 git commit -m "chore: Обновлены все submodules"
 ```
-
----
 
 ## Работа
 
@@ -110,8 +102,6 @@ git add src/cfe/infostart-print-wizard
 git commit -m "chore: Обновлен submodule с исправлениями"
 ```
 
----
-
 ## Удаление
 
 ```bash
@@ -127,8 +117,6 @@ rm -rf src/cfe/infostart-print-wizard
 # 4. Зафиксировать изменения
 git commit -m "chore: Удален submodule infostart-print-wizard"
 ```
-
----
 
 ## Полезные команды
 
@@ -149,8 +137,6 @@ git submodule sync
 git submodule foreach 'git pull origin main'
 ```
 
----
-
 ## Устранение проблем
 
 ### Показывается как измененный
@@ -169,8 +155,6 @@ git submodule update --init
 ```bash
 git submodule update --init --recursive --force
 ```
-
----
 
 ## Альтернативы
 

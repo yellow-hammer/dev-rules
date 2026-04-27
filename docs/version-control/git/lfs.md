@@ -35,8 +35,6 @@ title: Git LFS для больших файлов
 git lfs version
 ```
 
----
-
 ## Настройка
 
 ### Инициализация
@@ -67,8 +65,6 @@ git add .gitattributes
 git commit -m "chore: Настроен Git LFS"
 ```
 
----
-
 ## Использование
 
 После настройки работа как обычно:
@@ -80,8 +76,6 @@ git push
 ```
 
 Git LFS автоматически заменит файлы указателями.
-
----
 
 ## Просмотр
 
@@ -99,8 +93,6 @@ git lfs status
 git lfs env
 ```
 
----
-
 ## Клонирование
 
 ```bash
@@ -114,8 +106,6 @@ GIT_LFS_SKIP_SMUDGE=1 git clone <url>
 git lfs pull
 ```
 
----
-
 ## Миграция существующих файлов
 
 Если большие файлы уже в репозитории:
@@ -128,9 +118,9 @@ git lfs migrate import --include="*.cf" --everything
 git lfs migrate import --above=10MB --everything
 ```
 
-**Важно:** история будет переписана. Требуется `git push --force`.
-
----
+:::warning Важно
+Миграция переписывает историю репозитория. После неё потребуется `git push --force` и согласование с командой, чтобы все коллеги заново клонировали репозиторий.
+:::
 
 ## Атрибуты для 1С
 
@@ -152,8 +142,6 @@ git lfs migrate import --above=10MB --everything
 *.bin filter=lfs diff=lfs merge=lfs -text
 ```
 
----
-
 ## Ограничения
 
 | Сервис             | Хранилище       | Трафик/месяц |
@@ -161,8 +149,6 @@ git lfs migrate import --above=10MB --everything
 | GitHub (бесплатно) | 1 GB            | 1 GB         |
 | GitLab (бесплатно) | 10 GB           | —            |
 | Собственный сервер | Без ограничений | —            |
-
----
 
 ## Очистка
 
@@ -174,8 +160,6 @@ git lfs prune
 git lfs prune --verify-remote
 ```
 
----
-
 ## Устранение проблем
 
 ### Файлы не загружаются
@@ -185,13 +169,11 @@ git lfs install --force
 git lfs pull
 ```
 
-#### Превышен лимит хранилища
+### Превышен лимит хранилища
 
 1. Проверить размер: `git lfs ls-files`
 2. Удалить старые версии: `git lfs prune`
 3. Рассмотреть альтернативы (S3, Azure Blob)
-
----
 
 ## Альтернативы
 
