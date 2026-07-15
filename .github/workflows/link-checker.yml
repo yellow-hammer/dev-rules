@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Link Checker
-        uses: lycheeverse/lychee-action@v2.8.0
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           args: --verbose --no-progress --root-dir . --exclude '.*myblog-1c\.ru.*' --exclude '.*bit-erp\.ru/adapter.*' --exclude '.*files/vscode/.*\.pptx$' 'docs/**/*.md' 'README.md'
           fail: true
