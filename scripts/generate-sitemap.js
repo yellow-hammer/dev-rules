@@ -14,7 +14,6 @@ const CONFIG = {
     metadata: 0.8,
     manuals: 0.8,
     cicd: 0.8,
-    glossary: 0.7,
     other: 0.6,
     // Служебные страницы
     404: 0.1,
@@ -28,7 +27,6 @@ const CONFIG = {
     metadata: 'monthly',
     manuals: 'monthly',
     cicd: 'weekly',
-    glossary: 'monthly',
     other: 'monthly',
     404: 'yearly',
     search: 'never',
@@ -106,8 +104,6 @@ const getPriority = (normalizedPath, originalPath) => {
   if (pathLower.includes('manuals') || originalLower.includes('manuals'))
     return CONFIG.priorities.manuals;
   if (pathLower.includes('cicd') || originalLower.includes('cicd')) return CONFIG.priorities.cicd;
-  if (pathLower.includes('glossary') || originalLower.includes('glossary'))
-    return CONFIG.priorities.glossary;
   if (pathLower.includes('docs') || originalLower.includes('docs')) return CONFIG.priorities.docs;
 
   return CONFIG.priorities.other;
@@ -126,8 +122,6 @@ const getChangefreq = (normalizedPath, originalPath) => {
   if (pathLower.includes('manuals') || originalLower.includes('manuals'))
     return CONFIG.changefreq.manuals;
   if (pathLower.includes('cicd') || originalLower.includes('cicd')) return CONFIG.changefreq.cicd;
-  if (pathLower.includes('glossary') || originalLower.includes('glossary'))
-    return CONFIG.changefreq.glossary;
   if (pathLower.includes('docs') || originalLower.includes('docs')) return CONFIG.changefreq.docs;
 
   return CONFIG.changefreq.other;
