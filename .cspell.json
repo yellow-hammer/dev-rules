@@ -125,7 +125,10 @@
     "МСФО",
     "Сконвертированных",
     "Битрикс",
-    "bitrix"
+    "bitrix",
+    "zdiff3",
+    "rerere",
+    "ibcmd"
   ],
   "ignorePaths": [
     "node_modules/**",
