@@ -40,7 +40,7 @@ body:
     id: node_version
     attributes:
       label: Версия Node.js
-      description: Например, 20.x
+      description: Например, 22.x
     validations:
       required: false
   - type: input
