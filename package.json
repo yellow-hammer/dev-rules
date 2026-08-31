@@ -40,7 +40,7 @@
     "@cspell/dict-ru_ru": "^2.3.2",
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/types": "^3.10.2",
-    "baseline-browser-mapping": "^2.11.16",
+    "baseline-browser-mapping": "^2.11.20",
     "cspell": "^10.0.1",
     "glob": "^13.0.6",
     "husky": "^9.1.7",
