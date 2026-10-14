@@ -37,7 +37,7 @@
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@cspell/dict-ru_ru": "^2.3.2",
+    "@cspell/dict-ru_ru": "^2.3.3",
     "@docusaurus/module-type-aliases": "^3.10.2",
     "@docusaurus/types": "^3.10.2",
     "baseline-browser-mapping": "^2.11.28",
